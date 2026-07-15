@@ -9,6 +9,7 @@ from .models import (
     BackgroundImage,
     UploadedFile,
     TreeHoleImage,
+    TreeHoleContent,
     TreeHoleMessage
 )
 
@@ -112,16 +113,26 @@ class TreeHoleImageAdmin(admin.ModelAdmin):
     size_display.short_description = '文件大小'
 
 
+@admin.register(TreeHoleContent)
+class TreeHoleContentAdmin(admin.ModelAdmin):
+    list_display = ('content_id', 'content_summary', 'word_count', 'created_at')
+    list_filter = ('created_at',)
+    search_fields = ('content', 'content_id')
+    ordering = ('-created_at',)
+    readonly_fields = ('content_id', 'word_count', 'created_at')
+    fields = ('content',)
+
+
 @admin.register(TreeHoleMessage)
 class TreeHoleMessageAdmin(admin.ModelAdmin):
-    list_display = ('message_id', 'content_summary', 'has_image', 'created_at')
+    list_display = ('message_id', 'name', 'content_summary', 'has_image', 'created_at')
     list_filter = ('created_at',)
-    search_fields = ('content', 'message_id')
+    search_fields = ('name', 'content_ref__content', 'message_id')
     ordering = ('-created_at',)
     readonly_fields = ('message_id', 'created_at')
     fieldsets = (
         ('基本信息', {
-            'fields': ('message_id', 'content', 'created_at')
+            'fields': ('message_id', 'name', 'content_ref', 'created_at')
         }),
         ('图片', {
             'fields': ('image',)

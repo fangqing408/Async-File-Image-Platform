@@ -237,11 +237,12 @@ def api_treehole_upload_image(request):
 @require_http_methods(['POST'])
 def api_treehole_submit(request):
     try:
+        name = request.POST.get('name', '')
         content = request.POST.get('content', '')
         image_id = request.POST.get('image_id', '')
         image_file = request.FILES.get('image')
 
-        result = TreeHoleService.submit_message(content, image_file, image_id)
+        result = TreeHoleService.submit_message(name, content, image_file, image_id)
 
         status_code = 200 if result['code'] == 0 else 400
         return JsonResponse(result, status=status_code)

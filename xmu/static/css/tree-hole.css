@@ -60,6 +60,37 @@ body.no-nav {
     background: rgba(14, 165, 233, 0.05);
 }
 
+.tree-hole-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--neutral-100);
+    margin-bottom: var(--spacing-4);
+}
+
+.tree-hole-name {
+    flex: 1;
+    padding: var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: var(--neutral-800);
+    font-family: inherit;
+    background: var(--neutral-50);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.tree-hole-name:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    background: white;
+}
+
+.tree-hole-name::placeholder {
+    color: var(--neutral-400);
+}
+
 .tree-hole-input {
     width: 100%;
     border: none;

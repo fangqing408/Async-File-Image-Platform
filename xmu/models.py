@@ -195,9 +195,30 @@ class TreeHoleImage(models.Model):
         return self.image_id
 
 
+class TreeHoleContent(models.Model):
+    content_id = models.CharField(max_length=36, unique=True, verbose_name='内容唯一标识', db_index=True)
+    content = models.TextField(verbose_name='留言内容')
+    word_count = models.IntegerField(default=0, verbose_name='字数')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True, null=True)
+
+    class Meta:
+        verbose_name = '树洞内容'
+        verbose_name_plural = '树洞内容'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.content_id[:8]
+
+    def content_summary(self):
+        if not self.content:
+            return '无内容'
+        return self.content[:50] + '...' if len(self.content) > 50 else self.content
+
+
 class TreeHoleMessage(models.Model):
     message_id = models.CharField(max_length=36, unique=True, verbose_name='留言唯一标识', db_index=True)
-    content = models.TextField(blank=True, verbose_name='留言内容')
+    name = models.CharField(max_length=50, verbose_name='姓名', default='匿名')
+    content_ref = models.ForeignKey('TreeHoleContent', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='内容引用', related_name='messages')
     image = models.ImageField(upload_to='treehole/', blank=True, null=True, verbose_name='图片')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间', db_index=True, null=True)
 
@@ -210,9 +231,9 @@ class TreeHoleMessage(models.Model):
         return self.message_id[:8]
 
     def content_summary(self):
-        if not self.content:
+        if not self.content_ref or not self.content_ref.content:
             return '无内容'
-        return self.content[:50] + '...' if len(self.content) > 50 else self.content
+        return self.content_ref.content_summary()
 
     def has_image(self):
         return bool(self.image)

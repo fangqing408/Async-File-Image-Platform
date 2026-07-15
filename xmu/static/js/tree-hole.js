@@ -4,13 +4,14 @@
     var API_UPLOAD_IMAGE = '/api/th/upload-image/';
     var API_SUBMIT_MESSAGE = '/api/th/';
     var MAX_IMAGE_SIZE = 10 * 1024 * 1024;
-    var MAX_TEXT_LENGTH = 500;
+    var MAX_TEXT_LENGTH = 5000;
     var SUPPORTED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp'];
     var UPLOAD_TIMEOUT = 10000;
 
     var imageList = [];
     var isSubmitting = false;
 
+    var nameEl = document.getElementById('tree-hole-name');
     var inputEl = document.getElementById('tree-hole-input');
     var previewArea = document.getElementById('image-preview-area');
     var previewList = document.getElementById('image-preview-list');
@@ -306,10 +307,17 @@
     function submitTreeHole() {
         if (isSubmitting) return;
 
+        var name = nameEl.value.trim();
         var content = inputEl.value.trim();
         var successImages = imageList.filter(function (img) {
             return img.status === 'success' && img.imageId;
         });
+
+        if (!name) {
+            showToast('请输入您的姓名', 'warning');
+            nameEl.focus();
+            return;
+        }
 
         if (!content && successImages.length === 0) {
             showToast('请输入留言内容或上传图片', 'warning');
@@ -327,6 +335,7 @@
         submitBtn.disabled = true;
 
         var formData = new FormData();
+        formData.append('name', name);
         if (content) {
             formData.append('content', content);
         }

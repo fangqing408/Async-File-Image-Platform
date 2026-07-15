@@ -10,6 +10,7 @@ from .models import (
     ContactMessage,
     UploadedFile,
     TreeHoleImage,
+    TreeHoleContent,
     TreeHoleMessage
 )
 
@@ -136,7 +137,7 @@ class FileService:
 
 class TreeHoleService:
     MAX_IMAGE_SIZE = 5 * 1024 * 1024
-    MAX_TEXT_LENGTH = 500
+    MAX_TEXT_LENGTH = 5000
     SUPPORTED_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/webp']
 
     @classmethod
@@ -185,20 +186,34 @@ class TreeHoleService:
         }
 
     @classmethod
-    def submit_message(cls, content='', image=None, image_id=None):
+    def submit_message(cls, name='', content='', image=None, image_id=None):
+        name = (name or '').strip()
         content = (content or '').strip()
+
+        if not name:
+            return {'code': 1007, 'message': '请输入您的姓名', 'data': None}
 
         if not content and not image and not image_id:
             return {'code': 1006, 'message': '请输入留言内容或上传图片', 'data': None}
 
         if len(content) > cls.MAX_TEXT_LENGTH:
-            return {'code': 1002, 'message': '留言内容不能超过 500 字', 'data': None}
+            return {'code': 1002, 'message': '留言内容不能超过 5000 字', 'data': None}
 
         message_id = 'msg_' + str(uuid.uuid4()).replace('-', '')[:8]
 
+        content_ref = None
+        if content:
+            content_id = 'cnt_' + str(uuid.uuid4()).replace('-', '')[:8]
+            content_ref = TreeHoleContent.objects.create(
+                content_id=content_id,
+                content=content,
+                word_count=len(content)
+            )
+
         treehole_message = TreeHoleMessage.objects.create(
             message_id=message_id,
-            content=content
+            name=name,
+            content_ref=content_ref
         )
 
         if image:
@@ -223,6 +238,7 @@ class TreeHoleService:
             'message': 'success',
             'data': {
                 'message_id': message_id,
+                'name': name,
                 'content': content,
                 'image': image_url,
                 'created_at': created_at_str

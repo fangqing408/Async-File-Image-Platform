@@ -1449,3 +1449,101 @@ INFO 2026-07-15 17:29:04,944 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3746
 INFO 2026-07-15 17:29:15,459 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3713
 INFO 2026-07-15 17:30:53,143 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3752
 INFO 2026-07-15 17:31:04,608 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3758
+INFO 2026-07-15 20:45:31,409 autoreload 17376 11108 Watching for file changes with StatReloader
+INFO 2026-07-15 20:45:34,330 basehttp 17376 47908 "GET / HTTP/1.1" 200 8983
+WARNING 2026-07-15 20:45:34,541 log 17376 47908 Not Found: /favicon.ico
+WARNING 2026-07-15 20:45:34,542 basehttp 17376 47908 "GET /favicon.ico HTTP/1.1" 404 4761
+WARNING 2026-07-15 20:45:40,667 log 17376 47908 Not Found: /sh
+WARNING 2026-07-15 20:45:40,668 basehttp 17376 47908 "GET /sh HTTP/1.1" 404 4734
+INFO 2026-07-15 20:45:44,089 basehttp 17376 47908 "GET /th HTTP/1.1" 301 0
+INFO 2026-07-15 20:45:44,102 basehttp 17376 31616 "GET /th/ HTTP/1.1" 200 4007
+INFO 2026-07-15 20:45:44,313 basehttp 17376 31616 "GET /static/css/tree-hole.css HTTP/1.1" 200 9787
+INFO 2026-07-15 20:45:44,313 basehttp 17376 44968 "GET /static/js/tree-hole.js HTTP/1.1" 200 16814
+ERROR 2026-07-15 20:46:05,681 views 17376 44968 Tree hole submit error: name 'TreeHoleContent' is not defined
+ERROR 2026-07-15 20:46:05,682 log 17376 44968 Internal Server Error: /api/th/
+ERROR 2026-07-15 20:46:05,683 basehttp 17376 44968 "POST /api/th/ HTTP/1.1" 500 103
+INFO 2026-07-15 20:46:10,524 basehttp 17376 44968 "GET /th/ HTTP/1.1" 200 4007
+ERROR 2026-07-15 20:46:20,915 views 17376 44968 Tree hole submit error: name 'TreeHoleContent' is not defined
+ERROR 2026-07-15 20:46:20,917 log 17376 44968 Internal Server Error: /api/th/
+ERROR 2026-07-15 20:46:20,918 basehttp 17376 44968 "POST /api/th/ HTTP/1.1" 500 103
+INFO 2026-07-15 20:47:49,235 autoreload 17376 11108 D:\Trae\Files\03-xmu-llap\xmu\views.py changed, reloading.
+INFO 2026-07-15 20:47:50,048 autoreload 15236 39988 Watching for file changes with StatReloader
+INFO 2026-07-15 20:47:55,246 basehttp 15236 45580 "GET /th/ HTTP/1.1" 200 4007
+INFO 2026-07-15 20:47:55,298 basehttp 15236 45580 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+INFO 2026-07-15 20:47:55,301 basehttp 15236 18024 "GET /static/js/tree-hole.js HTTP/1.1" 304 0
+INFO 2026-07-15 20:48:01,121 views 15236 18024 Tree hole submit request: name=zjk, content_len=1227, image_id=, has_image=False
+ERROR 2026-07-15 20:48:01,123 views 15236 18024 Tree hole submit error: name 'TreeHoleContent' is not defined
+ERROR 2026-07-15 20:48:01,125 views 15236 18024 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 247, in api_treehole_submit
+    result = TreeHoleService.submit_message(name, content, image_file, image_id)
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 206, in submit_message
+    content_ref = TreeHoleContent.objects.create(
+NameError: name 'TreeHoleContent' is not defined
+
+ERROR 2026-07-15 20:48:01,126 log 15236 18024 Internal Server Error: /api/th/
+ERROR 2026-07-15 20:48:01,128 basehttp 15236 18024 "POST /api/th/ HTTP/1.1" 500 103
+INFO 2026-07-15 20:48:01,315 autoreload 17512 7644 Watching for file changes with StatReloader
+WARNING 2026-07-15 20:48:15,801 log 15236 6660 Forbidden (CSRF cookie not set.): /api/th/
+WARNING 2026-07-15 20:48:15,803 basehttp 15236 6660 "POST /api/th/ HTTP/1.1" 403 2801
+INFO 2026-07-15 20:48:22,259 basehttp 15236 18024 "GET /th/ HTTP/1.1" 200 4007
+INFO 2026-07-15 20:48:25,181 views 15236 18024 Tree hole submit request: name=1, content_len=1227, image_id=, has_image=False
+ERROR 2026-07-15 20:48:25,181 views 15236 18024 Tree hole submit error: name 'TreeHoleContent' is not defined
+ERROR 2026-07-15 20:48:25,182 views 15236 18024 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 247, in api_treehole_submit
+    result = TreeHoleService.submit_message(name, content, image_file, image_id)
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 206, in submit_message
+    content_ref = TreeHoleContent.objects.create(
+NameError: name 'TreeHoleContent' is not defined
+
+ERROR 2026-07-15 20:48:25,183 log 15236 18024 Internal Server Error: /api/th/
+ERROR 2026-07-15 20:48:25,184 basehttp 15236 18024 "POST /api/th/ HTTP/1.1" 500 103
+INFO 2026-07-15 20:48:37,198 autoreload 15236 39988 D:\Trae\Files\03-xmu-llap\xmu\services.py changed, reloading.
+INFO 2026-07-15 20:48:37,368 autoreload 17512 7644 D:\Trae\Files\03-xmu-llap\xmu\services.py changed, reloading.
+INFO 2026-07-15 20:48:37,999 autoreload 12736 18980 Watching for file changes with StatReloader
+INFO 2026-07-15 20:48:38,828 autoreload 39800 34364 Watching for file changes with StatReloader
+INFO 2026-07-15 20:48:51,938 basehttp 12736 5912 "GET /th/ HTTP/1.1" 200 4007
+INFO 2026-07-15 20:48:55,625 views 12736 5912 Tree hole submit request: name=zjk, content_len=1227, image_id=, has_image=False
+INFO 2026-07-15 20:48:55,647 basehttp 12736 5912 "POST /api/th/ HTTP/1.1" 200 1718
+INFO 2026-07-15 20:48:57,788 autoreload 43296 43760 Watching for file changes with StatReloader
+INFO 2026-07-15 20:49:02,916 basehttp 12736 5912 "GET /admin/ HTTP/1.1" 200 13440
+INFO 2026-07-15 20:49:03,095 basehttp 12736 5912 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-07-15 20:49:03,119 basehttp 12736 5912 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-07-15 20:49:03,120 basehttp 12736 44760 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-07-15 20:49:05,598 basehttp 12736 44760 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:49:05,672 basehttp 12736 44760 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:14,268 basehttp 12736 44760 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:49:14,317 basehttp 12736 44760 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:17,951 basehttp 12736 44760 "GET /admin/xmu/treeholemessage/7/change/ HTTP/1.1" 200 15405
+INFO 2026-07-15 20:49:18,008 basehttp 12736 5912 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:18,018 basehttp 12736 44760 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-07-15 20:49:32,708 basehttp 12736 44760 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:49:32,762 basehttp 12736 44760 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:35,275 autoreload 43296 43760 D:\Trae\Files\03-xmu-llap\xmu\views.py changed, reloading.
+INFO 2026-07-15 20:49:35,666 autoreload 12736 18980 D:\Trae\Files\03-xmu-llap\xmu\views.py changed, reloading.
+INFO 2026-07-15 20:49:36,493 autoreload 30176 41184 Watching for file changes with StatReloader
+INFO 2026-07-15 20:49:36,698 autoreload 25492 33124 Watching for file changes with StatReloader
+INFO 2026-07-15 20:49:36,987 basehttp 30176 47456 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:49:37,037 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:39,412 basehttp 30176 47456 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:49:39,463 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:41,965 basehttp 30176 47456 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:49:42,019 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:43,473 basehttp 30176 47456 "GET /admin/xmu/treeholecontent/1/change/ HTTP/1.1" 200 13030
+INFO 2026-07-15 20:49:43,524 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:52,887 basehttp 30176 47456 "GET /admin/xmu/researchdirection/ HTTP/1.1" 200 15531
+INFO 2026-07-15 20:49:52,940 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:49:55,527 basehttp 30176 47456 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:49:55,581 basehttp 30176 47456 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 20:57:26,934 basehttp 30176 27800 "GET /admin/xmu/researchdirection/ HTTP/1.1" 200 15531
+INFO 2026-07-15 20:57:27,518 basehttp 30176 27800 "GET /admin/xmu/treeholecontent/1/change/ HTTP/1.1" 200 13030
+INFO 2026-07-15 20:57:28,017 basehttp 30176 27800 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:57:28,528 basehttp 30176 27800 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:57:29,023 basehttp 30176 27800 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:57:29,521 basehttp 30176 27800 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:57:30,040 basehttp 30176 27800 "GET /admin/xmu/treeholemessage/7/change/ HTTP/1.1" 200 15405
+INFO 2026-07-15 20:57:30,607 basehttp 30176 27800 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 16854
+INFO 2026-07-15 20:57:31,179 basehttp 30176 27800 "GET /admin/xmu/treeholecontent/ HTTP/1.1" 200 13938
+INFO 2026-07-15 20:57:31,747 basehttp 30176 27800 "GET /admin/ HTTP/1.1" 200 13440
+INFO 2026-07-15 20:57:33,808 basehttp 30176 27800 "GET /th/ HTTP/1.1" 200 4096
+INFO 2026-07-15 20:57:33,852 basehttp 30176 10580 "GET /static/js/tree-hole.js HTTP/1.1" 304 0
+INFO 2026-07-15 20:57:33,955 basehttp 30176 27800 "GET /static/css/tree-hole.css HTTP/1.1" 200 9961

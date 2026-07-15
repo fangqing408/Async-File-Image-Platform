@@ -4,7 +4,11 @@
 
 - 项目环境
 
-详见 `requirements.txt` 文件。
+详见 `pyproject.toml` 文件。
+
+构建环境只需要只需执行 `curl -LsSf https://astral.sh/uv/install.sh | sh` 安装 uv 环境。
+
+然后 `uv sync` 即可安装依赖依赖。
 
 
 ## 2 >> 搭建步骤

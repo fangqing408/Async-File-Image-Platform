@@ -1,52 +1,80 @@
-/* 地址部分的样式 */
 .address-section {
-    background-color: #f9f9f9; /* 背景色 */
-    text-align: center; /* 文本居中 */
-    border-radius: 10px; /* 圆角 */
-    padding: 10px; /* 内边距 */
+    background: white;
+    text-align: center;
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-8);
+    margin: var(--spacing-6) auto;
+    max-width: 800px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--neutral-100);
+    transition: all var(--transition-normal);
+}
+
+.address-section:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .address-section h2 {
-    font-size: 32px; /* 默认字体大小 */
-    margin-bottom: 20px; /* 底部间距 */
-    font-weight: bold; /* 加粗 */
-    text-align: center; /* 文本居中 */
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
+    margin-bottom: var(--spacing-6);
+    font-weight: var(--font-bold);
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .address-text {
-    font-size: 18px; /* 默认字体大小 */
-    margin-bottom: 20px; /* 底部间距 */
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-6);
+    color: var(--neutral-600);
+    line-height: 1.8;
 }
 
 .address-text a {
-    text-decoration: none; /* 去除下划线 */
-    color: black; /* 文本颜色 */
+    text-decoration: none;
+    color: var(--primary-500);
+    font-weight: var(--font-semibold);
+    transition: color var(--transition-normal);
+    border-bottom: 2px solid transparent;
+}
+
+.address-text a:hover {
+    color: var(--primary-600);
+    border-bottom-color: var(--primary-400);
 }
 
 .address-image {
-    max-width: 40%; /* 默认最大宽度 */
-    height: auto; /* 高度自适应 */
-    display: block; /* block 布局 */
-    margin: 0 auto; /* 居中 */
-    border-radius: 8px; /* 圆角 */
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
 }
 
-/* 适应小屏手机（max-width: 768px） */
+.address-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
 @media (max-width: 768px) {
     .address-section {
-        padding: 15px; /* 调整内边距 */
+        padding: var(--spacing-6);
+        margin: var(--spacing-4);
     }
 
     .address-section h2 {
-        font-size: 24px; /* 手机端标题字体调整 */
+        font-size: var(--text-xl);
     }
 
     .address-text {
-        font-size: 16px; /* 手机端字体调整 */
+        font-size: var(--text-base);
     }
 
     .address-image {
-        max-width: 100%; /* 图片宽度占满屏幕 */
-        margin-bottom: 20px; /* 增加底部间距 */
+        max-width: 100%;
+        margin-bottom: var(--spacing-4);
     }
 }

@@ -1,0 +1,1451 @@
+INFO 2026-07-09 21:31:59,480 autoreload 33284 27276 Watching for file changes with StatReloader
+INFO 2026-07-09 21:33:23,403 autoreload 15792 28960 Watching for file changes with StatReloader
+ERROR 2026-07-09 21:33:28,974 utils 15792 29328 Request failed: /
+ERROR 2026-07-09 21:33:28,975 utils 15792 29328 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:33:28,987 utils 15792 29328 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:33:28,988 views 15792 29328 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:33:29,018 basehttp 15792 29328 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:29,077 log 15792 29328 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:29,079 log 15792 17396 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:29,081 log 15792 35620 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:29,082 log 15792 23936 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:29,083 basehttp 15792 29328 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,085 log 15792 8048 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:29,085 basehttp 15792 17396 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,086 basehttp 15792 35620 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,087 log 15792 35256 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:29,089 log 15792 29328 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:29,089 basehttp 15792 23936 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,089 basehttp 15792 8048 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,092 log 15792 17396 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:29,094 log 15792 35620 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:29,095 basehttp 15792 35256 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,096 log 15792 23936 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:29,099 log 15792 8048 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:29,100 basehttp 15792 29328 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,101 basehttp 15792 17396 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,102 basehttp 15792 35620 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,104 basehttp 15792 23936 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:29,104 basehttp 15792 8048 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:33,224 basehttp 15792 8048 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:33,277 log 15792 8048 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:33,279 log 15792 35620 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:33,281 log 15792 17396 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:33,283 log 15792 29328 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:33,284 log 15792 35256 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:33,285 log 15792 23936 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:33,287 basehttp 15792 8048 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,288 basehttp 15792 35620 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,288 basehttp 15792 17396 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,290 basehttp 15792 29328 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,290 basehttp 15792 35256 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,292 log 15792 8048 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:33,294 basehttp 15792 23936 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,295 log 15792 35620 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:33,298 log 15792 17396 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:33,300 log 15792 29328 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:33,302 log 15792 35256 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:33,304 basehttp 15792 8048 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,307 basehttp 15792 17396 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,307 basehttp 15792 35620 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,308 basehttp 15792 29328 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:33,308 basehttp 15792 35256 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:34,185 basehttp 15792 35256 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:34,235 log 15792 35256 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:34,237 log 15792 17396 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:34,238 log 15792 35620 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:34,241 log 15792 8048 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:34,242 log 15792 23936 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:34,244 log 15792 29328 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:34,245 basehttp 15792 35256 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,247 basehttp 15792 17396 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,248 basehttp 15792 8048 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,248 basehttp 15792 35620 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,250 log 15792 35256 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:34,252 log 15792 17396 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:34,252 basehttp 15792 23936 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,253 log 15792 8048 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:34,253 basehttp 15792 29328 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,256 log 15792 35620 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:34,259 log 15792 23936 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:34,261 basehttp 15792 35256 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,262 basehttp 15792 17396 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,263 basehttp 15792 8048 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,263 basehttp 15792 35620 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,264 basehttp 15792 23936 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:34,267 basehttp 15792 17396 - Broken pipe from ('127.0.0.1', 58771)
+INFO 2026-07-09 21:33:34,865 basehttp 15792 23936 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:34,922 log 15792 23936 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:34,924 log 15792 35620 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:34,925 log 15792 35256 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:34,925 log 15792 29328 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:34,927 log 15792 8048 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:34,930 log 15792 33292 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:34,930 basehttp 15792 35620 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,931 basehttp 15792 23936 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,931 basehttp 15792 35256 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,933 basehttp 15792 29328 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,933 basehttp 15792 8048 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,935 log 15792 35620 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:34,935 basehttp 15792 33292 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,937 basehttp 15792 35620 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,941 log 15792 23936 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:34,942 log 15792 29328 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:34,944 log 15792 35256 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:34,945 log 15792 8048 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:34,946 basehttp 15792 23936 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,948 basehttp 15792 29328 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,949 basehttp 15792 35256 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:34,950 basehttp 15792 8048 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:45,777 autoreload 37712 36508 Watching for file changes with StatReloader
+WARNING 2026-07-09 21:33:47,829 log 37712 30656 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:47,829 basehttp 37712 30656 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,837 log 37712 34152 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:47,840 log 37712 34960 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:47,841 log 37712 30656 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:47,843 log 37712 33360 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:47,843 basehttp 37712 34152 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,845 log 37712 30508 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:47,847 log 37712 34152 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:47,847 basehttp 37712 34960 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,848 basehttp 37712 33360 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,848 basehttp 37712 30656 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,849 log 37712 496 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:47,851 log 37712 34960 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:47,851 basehttp 37712 30508 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,851 basehttp 37712 34152 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,854 log 37712 33360 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:47,856 log 37712 30656 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:47,857 log 37712 30508 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:47,858 basehttp 37712 496 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,859 log 37712 34152 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:47,859 basehttp 37712 34960 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,860 basehttp 37712 33360 "GET /static/js/main.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,860 basehttp 37712 30656 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,861 basehttp 37712 30508 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:47,861 basehttp 37712 34152 "GET /static/images/ip.png HTTP/1.1" 404 179
+ERROR 2026-07-09 21:33:51,780 utils 37712 34152 Request failed: /
+ERROR 2026-07-09 21:33:51,780 utils 37712 34152 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:33:51,787 utils 37712 34152 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:33:51,788 views 37712 34152 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:33:51,819 basehttp 37712 34152 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:51,868 log 37712 34152 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:51,868 log 37712 496 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:51,870 log 37712 33360 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:51,872 log 37712 34960 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:51,873 log 37712 30508 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:51,874 log 37712 30656 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:51,878 basehttp 37712 34152 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,878 basehttp 37712 33360 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,878 basehttp 37712 34960 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,879 basehttp 37712 496 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,880 basehttp 37712 30656 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,880 basehttp 37712 30508 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,883 log 37712 33360 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:51,885 log 37712 34152 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:51,887 log 37712 34960 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:51,888 log 37712 496 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:51,889 log 37712 30656 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:51,890 log 37712 30508 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:51,891 basehttp 37712 33360 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,892 basehttp 37712 34152 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,894 basehttp 37712 34960 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,894 basehttp 37712 30656 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,895 log 37712 33360 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:51,897 basehttp 37712 496 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,898 basehttp 37712 30508 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:51,899 basehttp 37712 33360 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:52,731 basehttp 37712 33360 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:52,790 log 37712 33360 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:52,793 log 37712 30508 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:52,794 log 37712 496 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:52,796 log 37712 34960 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:52,797 log 37712 34152 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:52,799 log 37712 30656 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:52,801 basehttp 37712 33360 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,801 basehttp 37712 30508 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,803 basehttp 37712 496 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,803 basehttp 37712 34960 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,803 basehttp 37712 34152 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,804 basehttp 37712 30656 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,812 log 37712 33360 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:52,814 log 37712 496 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:52,816 log 37712 34960 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:52,817 log 37712 34152 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:52,818 log 37712 30656 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:52,820 log 37712 30508 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:52,822 basehttp 37712 33360 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,823 basehttp 37712 496 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,823 basehttp 37712 34960 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,824 basehttp 37712 34152 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,824 basehttp 37712 30656 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,827 log 37712 33360 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:52,827 basehttp 37712 30508 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:52,830 basehttp 37712 33360 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:53,257 basehttp 37712 33360 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:53,309 log 37712 33360 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:53,314 log 37712 30656 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:53,316 log 37712 34152 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:53,316 log 37712 34960 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:53,318 log 37712 30508 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:53,319 log 37712 496 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:53,320 basehttp 37712 33360 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,322 basehttp 37712 30656 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,322 basehttp 37712 34152 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,323 basehttp 37712 34960 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,324 basehttp 37712 30508 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,326 log 37712 33360 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:53,329 log 37712 30656 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:53,332 log 37712 34152 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:53,333 basehttp 37712 496 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,334 log 37712 34960 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:53,335 log 37712 30508 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:53,336 log 37712 37552 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:53,339 basehttp 37712 30656 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,339 basehttp 37712 33360 "GET /static/css/gallery.css HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:53,340 basehttp 37712 496 - Broken pipe from ('127.0.0.1', 51568)
+WARNING 2026-07-09 21:33:53,341 basehttp 37712 34152 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,341 basehttp 37712 34960 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,342 basehttp 37712 30508 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,345 log 37712 30656 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:53,345 basehttp 37712 37552 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,349 basehttp 37712 30656 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:53,851 basehttp 37712 30656 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:53,905 log 37712 30656 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:53,907 log 37712 37552 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:53,908 log 37712 34960 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:53,910 log 37712 34152 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:53,912 log 37712 33360 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:53,913 log 37712 30508 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:53,914 basehttp 37712 30656 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,915 basehttp 37712 34960 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,915 basehttp 37712 37552 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,916 basehttp 37712 34152 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,916 basehttp 37712 33360 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,919 basehttp 37712 30508 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,922 log 37712 30656 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:53,923 log 37712 34960 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:53,924 log 37712 34152 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:53,925 log 37712 33360 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:53,926 log 37712 30508 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:53,927 log 37712 37552 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:53,929 basehttp 37712 33360 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,930 basehttp 37712 30656 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,930 basehttp 37712 34152 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,931 basehttp 37712 34960 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,932 log 37712 30656 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:53,932 basehttp 37712 30508 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,932 basehttp 37712 37552 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:53,936 basehttp 37712 30656 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:54,532 basehttp 37712 30656 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:54,587 log 37712 30656 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:54,588 log 37712 37552 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:54,590 log 37712 34960 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:54,591 log 37712 34152 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:54,593 log 37712 33360 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:54,594 log 37712 30508 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:54,597 basehttp 37712 30656 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,597 basehttp 37712 37552 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,597 basehttp 37712 34960 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,597 basehttp 37712 34152 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,599 basehttp 37712 33360 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,599 basehttp 37712 30508 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,603 log 37712 30656 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:54,605 log 37712 37552 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:54,608 log 37712 34152 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:54,609 log 37712 34960 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:54,611 log 37712 33360 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:54,612 log 37712 30508 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:54,614 basehttp 37712 30656 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,615 basehttp 37712 37552 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,615 basehttp 37712 34152 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,617 basehttp 37712 33360 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,617 basehttp 37712 34960 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,619 log 37712 30656 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:54,619 basehttp 37712 30508 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:54,623 basehttp 37712 30656 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:55,099 basehttp 37712 30656 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:55,153 log 37712 30656 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:55,155 log 37712 34960 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:55,157 log 37712 33360 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:55,158 log 37712 34152 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:55,160 log 37712 37552 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:55,161 log 37712 30508 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:55,163 basehttp 37712 30656 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,164 basehttp 37712 34960 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,165 basehttp 37712 33360 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,165 basehttp 37712 34152 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,167 basehttp 37712 37552 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,168 basehttp 37712 30508 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,172 log 37712 30656 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:55,174 log 37712 34960 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:55,174 log 37712 34152 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:55,177 log 37712 37552 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:55,177 log 37712 30508 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:55,179 log 37712 33360 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:55,181 basehttp 37712 30656 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,182 basehttp 37712 34960 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,183 basehttp 37712 34152 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,184 basehttp 37712 30508 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,184 basehttp 37712 37552 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,186 log 37712 30656 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:55,188 basehttp 37712 33360 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:55,189 basehttp 37712 30656 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:33:56,091 basehttp 37712 30656 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:33:56,143 log 37712 30656 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:33:56,145 log 37712 37552 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:33:56,147 log 37712 30508 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:33:56,147 log 37712 34152 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:33:56,151 log 37712 34960 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:33:56,152 log 37712 33360 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:33:56,153 basehttp 37712 30656 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,154 basehttp 37712 37552 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,154 basehttp 37712 30508 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,155 basehttp 37712 34152 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,156 basehttp 37712 34960 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,158 log 37712 30656 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:33:56,161 log 37712 37552 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:33:56,161 basehttp 37712 33360 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,163 log 37712 30508 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:33:56,166 log 37712 34152 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:33:56,168 log 37712 34960 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:33:56,170 log 37712 33360 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:33:56,171 basehttp 37712 30656 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,172 basehttp 37712 37552 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,173 basehttp 37712 30508 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,174 basehttp 37712 34152 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,177 log 37712 30656 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:33:56,178 basehttp 37712 34960 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,178 basehttp 37712 33360 "GET /static/images/ip.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:33:56,180 basehttp 37712 30656 "GET /static/js/main.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:34:25,509 basehttp 37712 30656 "GET /admin/ HTTP/1.1" 200 12083
+WARNING 2026-07-09 21:34:25,554 log 37712 30656 Not Found: /static/admin/css/base.css
+WARNING 2026-07-09 21:34:25,555 log 37712 33360 Not Found: /static/admin/css/dark_mode.css
+WARNING 2026-07-09 21:34:25,557 log 37712 34960 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2026-07-09 21:34:25,559 log 37712 34152 Not Found: /static/admin/css/dashboard.css
+WARNING 2026-07-09 21:34:25,561 log 37712 30508 Not Found: /static/admin/css/responsive.css
+WARNING 2026-07-09 21:34:25,562 log 37712 37552 Not Found: /static/admin/js/theme.js
+WARNING 2026-07-09 21:34:25,564 basehttp 37712 30656 "GET /static/admin/css/base.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,564 basehttp 37712 33360 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,565 basehttp 37712 34152 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,565 basehttp 37712 34960 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,567 basehttp 37712 37552 "GET /static/admin/js/theme.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,567 basehttp 37712 30508 "GET /static/admin/css/responsive.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:25,572 log 37712 37552 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2026-07-09 21:34:25,575 basehttp 37712 37552 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 179
+INFO 2026-07-09 21:34:42,586 autoreload 36908 14724 Watching for file changes with StatReloader
+WARNING 2026-07-09 21:34:46,958 log 36908 37616 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:34:46,960 log 36908 31308 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:34:46,960 log 36908 35060 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:34:46,963 log 36908 17332 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:34:46,964 log 36908 33812 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:34:46,964 log 36908 34128 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:34:46,966 basehttp 36908 37616 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,966 basehttp 36908 31308 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,967 basehttp 36908 35060 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,967 basehttp 36908 17332 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,971 log 36908 37616 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:34:46,974 log 36908 31308 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:34:46,974 basehttp 36908 34128 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,978 log 36908 35060 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:34:46,980 log 36908 34736 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:34:46,981 basehttp 36908 33812 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,983 log 36908 17332 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:34:46,986 log 36908 34128 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:34:46,986 basehttp 36908 37616 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,986 basehttp 36908 31308 "GET /static/css/home.css HTTP/1.1" 404 179
+INFO 2026-07-09 21:34:46,988 basehttp 36908 33812 - Broken pipe from ('127.0.0.1', 58107)
+WARNING 2026-07-09 21:34:46,989 basehttp 36908 35060 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,989 basehttp 36908 34736 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,990 basehttp 36908 17332 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,993 log 36908 37616 Not Found: /static/images/ip.png
+INFO 2026-07-09 21:34:46,993 basehttp 36908 31308 - Broken pipe from ('127.0.0.1', 58818)
+WARNING 2026-07-09 21:34:46,993 basehttp 36908 34128 "GET /static/js/main.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:34:46,997 basehttp 36908 37616 "GET /static/images/ip.png HTTP/1.1" 404 179
+ERROR 2026-07-09 21:35:15,883 utils 36908 37616 Request failed: /
+ERROR 2026-07-09 21:35:15,884 utils 36908 37616 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:35:15,890 utils 36908 37616 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:35:15,891 views 36908 37616 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:35:15,910 basehttp 36908 37616 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:35:15,954 log 36908 37616 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:35:15,957 log 36908 34128 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:35:15,959 log 36908 34736 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:35:15,960 log 36908 35060 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:35:15,962 log 36908 34076 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:35:15,963 log 36908 17332 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:35:15,963 basehttp 36908 37616 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,964 basehttp 36908 34128 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,966 basehttp 36908 34736 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,967 basehttp 36908 35060 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,968 log 36908 37616 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:35:15,969 basehttp 36908 34076 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,970 log 36908 34128 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:35:15,973 log 36908 34736 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:35:15,973 basehttp 36908 17332 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,975 log 36908 35060 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:35:15,976 log 36908 34076 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:35:15,976 basehttp 36908 37616 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,978 basehttp 36908 34128 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,980 log 36908 17332 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:35:15,980 basehttp 36908 34736 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,982 log 36908 37616 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:35:15,982 basehttp 36908 34076 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,983 basehttp 36908 35060 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:35:15,983 basehttp 36908 17332 "GET /static/images/ip.png HTTP/1.1" 404 179
+INFO 2026-07-09 21:35:15,985 basehttp 36908 35060 - Broken pipe from ('127.0.0.1', 61305)
+WARNING 2026-07-09 21:35:15,985 basehttp 36908 37616 "GET /static/js/main.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,762 log 36908 37616 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:36:05,764 log 36908 34076 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:36:05,767 log 36908 34128 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:36:05,769 log 36908 17332 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:36:05,771 basehttp 36908 37616 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,773 log 36908 23712 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:36:05,776 log 36908 37616 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:36:05,776 basehttp 36908 34076 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,776 basehttp 36908 34128 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,778 basehttp 36908 17332 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,783 log 36908 20844 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:36:05,785 log 36908 34076 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:36:05,786 basehttp 36908 37616 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,786 log 36908 34128 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:36:05,788 basehttp 36908 23712 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,790 log 36908 17332 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:36:05,792 basehttp 36908 20844 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,793 basehttp 36908 34076 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,794 basehttp 36908 34128 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,796 basehttp 36908 17332 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:36:05,802 log 36908 17332 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 21:36:05,803 basehttp 36908 17332 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+INFO 2026-07-09 21:40:26,004 autoreload 31520 31772 Watching for file changes with StatReloader
+ERROR 2026-07-09 21:40:28,196 utils 31520 30888 Request failed: /
+ERROR 2026-07-09 21:40:28,197 utils 31520 30888 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:40:28,199 utils 31520 30888 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:40:28,199 views 31520 30888 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:40:28,217 basehttp 31520 30888 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:40:28,286 log 31520 30888 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 21:40:28,286 basehttp 31520 30888 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,293 log 31520 30888 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:40:28,293 basehttp 31520 30888 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,299 log 31520 21924 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:40:28,301 log 31520 36012 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:40:28,301 basehttp 31520 21924 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,305 log 31520 30888 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:40:28,306 log 31520 35688 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:40:28,308 log 31520 21924 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:40:28,309 log 31520 28088 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:40:28,309 basehttp 31520 36012 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,311 basehttp 31520 30888 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,312 log 31520 28220 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:40:28,313 basehttp 31520 35688 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,314 basehttp 31520 21924 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,314 log 31520 36012 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:40:28,316 log 31520 30888 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:40:28,316 basehttp 31520 28088 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,317 basehttp 31520 28220 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,319 log 31520 35688 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:40:28,320 log 31520 21924 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:40:28,324 log 31520 28088 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:40:28,326 basehttp 31520 30888 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,327 basehttp 31520 36012 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,327 basehttp 31520 35688 "GET /static/js/main.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,328 basehttp 31520 21924 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:28,330 basehttp 31520 28088 "GET /static/images/ip.png HTTP/1.1" 404 179
+INFO 2026-07-09 21:40:29,251 basehttp 31520 28088 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:40:29,318 log 31520 28088 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 21:40:29,320 log 31520 21924 Not Found: /static/css/variables.css
+WARNING 2026-07-09 21:40:29,320 basehttp 31520 28088 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,323 log 31520 35688 Not Found: /static/css/style.css
+WARNING 2026-07-09 21:40:29,325 log 31520 30888 Not Found: /static/css/navigator.css
+WARNING 2026-07-09 21:40:29,327 log 31520 28088 Not Found: /static/css/contact.css
+WARNING 2026-07-09 21:40:29,329 log 31520 28220 Not Found: /static/css/gallery.css
+WARNING 2026-07-09 21:40:29,330 log 31520 36012 Not Found: /static/css/address.css
+WARNING 2026-07-09 21:40:29,332 basehttp 31520 21924 "GET /static/css/variables.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,332 basehttp 31520 35688 "GET /static/css/style.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,333 basehttp 31520 30888 "GET /static/css/navigator.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,333 basehttp 31520 28088 "GET /static/css/contact.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,335 basehttp 31520 28220 "GET /static/css/gallery.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,337 basehttp 31520 36012 "GET /static/css/address.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,345 log 31520 21924 Not Found: /static/css/paper.css
+WARNING 2026-07-09 21:40:29,348 log 31520 35688 Not Found: /static/css/home.css
+WARNING 2026-07-09 21:40:29,349 log 31520 30888 Not Found: /static/css/research.css
+WARNING 2026-07-09 21:40:29,352 log 31520 28088 Not Found: /static/css/result.css
+WARNING 2026-07-09 21:40:29,354 log 31520 36012 Not Found: /static/images/logo.png
+WARNING 2026-07-09 21:40:29,355 log 31520 28220 Not Found: /static/js/main.js
+WARNING 2026-07-09 21:40:29,357 basehttp 31520 21924 "GET /static/css/paper.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,358 basehttp 31520 35688 "GET /static/css/home.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,358 basehttp 31520 30888 "GET /static/css/research.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,360 basehttp 31520 28088 "GET /static/css/result.css HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,361 basehttp 31520 36012 "GET /static/images/logo.png HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,363 basehttp 31520 28220 "GET /static/js/main.js HTTP/1.1" 404 179
+WARNING 2026-07-09 21:40:29,372 log 31520 28220 Not Found: /static/images/ip.png
+WARNING 2026-07-09 21:40:29,372 basehttp 31520 28220 "GET /static/images/ip.png HTTP/1.1" 404 179
+INFO 2026-07-09 21:42:28,268 autoreload 31520 31772 D:\Trae\Files\03-xmu-llap\Web\settings.py changed, reloading.
+INFO 2026-07-09 21:42:29,027 autoreload 27184 5780 Watching for file changes with StatReloader
+INFO 2026-07-09 21:43:56,941 autoreload 20044 32460 Watching for file changes with StatReloader
+ERROR 2026-07-09 21:43:59,265 utils 20044 13400 Request failed: /
+ERROR 2026-07-09 21:43:59,266 utils 20044 13400 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:43:59,269 utils 20044 13400 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "D:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:43:59,270 views 20044 13400 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:43:59,287 basehttp 20044 13400 "GET / HTTP/1.1" 200 5571
+WARNING 2026-07-09 21:43:59,365 log 20044 13400 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 21:43:59,367 basehttp 20044 13400 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4316
+INFO 2026-07-09 21:43:59,784 basehttp 20044 25440 "GET /static/css/variables.css HTTP/1.1" 200 1930
+INFO 2026-07-09 21:43:59,787 basehttp 20044 25440 "GET /static/css/paper.css HTTP/1.1" 200 2351
+INFO 2026-07-09 21:43:59,790 basehttp 20044 25440 "GET /static/css/home.css HTTP/1.1" 200 4482
+INFO 2026-07-09 21:43:59,793 basehttp 20044 25440 "GET /static/css/research.css HTTP/1.1" 200 2305
+INFO 2026-07-09 21:43:59,795 basehttp 20044 25440 "GET /static/css/result.css HTTP/1.1" 200 2012
+INFO 2026-07-09 21:43:59,799 basehttp 20044 25440 "GET /static/js/main.js HTTP/1.1" 200 3378
+INFO 2026-07-09 21:43:59,800 basehttp 20044 4036 "GET /static/css/address.css HTTP/1.1" 200 1829
+INFO 2026-07-09 21:43:59,805 basehttp 20044 22436 "GET /static/css/style.css HTTP/1.1" 200 1679
+INFO 2026-07-09 21:43:59,808 basehttp 20044 36144 "GET /static/css/navigator.css HTTP/1.1" 200 5833
+INFO 2026-07-09 21:43:59,809 basehttp 20044 18612 "GET /static/css/contact.css HTTP/1.1" 200 3846
+INFO 2026-07-09 21:43:59,811 basehttp 20044 13400 "GET /static/css/gallery.css HTTP/1.1" 200 2267
+INFO 2026-07-09 21:43:59,813 basehttp 20044 25440 "GET /static/images/logo.png HTTP/1.1" 200 67046
+INFO 2026-07-09 21:43:59,815 basehttp 20044 4036 "GET /static/images/ip.png HTTP/1.1" 200 376016
+INFO 2026-07-09 21:44:19,075 basehttp 20044 4036 "GET /admin/ HTTP/1.1" 200 12083
+INFO 2026-07-09 21:44:19,117 basehttp 20044 4036 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-07-09 21:44:19,128 basehttp 20044 13400 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-07-09 21:44:19,129 basehttp 20044 25440 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-07-09 21:44:19,129 basehttp 20044 18612 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-07-09 21:44:19,134 basehttp 20044 4036 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-07-09 21:44:19,140 basehttp 20044 18612 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-07-09 21:44:19,141 basehttp 20044 25440 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-07-09 21:44:19,151 basehttp 20044 25440 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:19,155 basehttp 20044 4036 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:19,156 basehttp 20044 18612 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:22,504 basehttp 20044 18612 "GET / HTTP/1.1" 200 5571
+INFO 2026-07-09 21:44:33,472 views 20044 18612 Contact message created by 朱金康 uex5 (2463973240@qq.com)
+INFO 2026-07-09 21:44:33,475 basehttp 20044 18612 "POST /submit_contact/ HTTP/1.1" 200 849
+INFO 2026-07-09 21:44:33,526 basehttp 20044 18612 "GET /static/css/success.css HTTP/1.1" 200 2270
+INFO 2026-07-09 21:44:42,747 basehttp 20044 18612 "GET /admin/xmu/contactmessage/ HTTP/1.1" 200 18543
+INFO 2026-07-09 21:44:42,809 basehttp 20044 25440 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,811 basehttp 20044 13400 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,812 basehttp 20044 22436 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,814 basehttp 20044 36144 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,815 basehttp 20044 18612 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,820 basehttp 20044 13400 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,823 basehttp 20044 25440 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,826 basehttp 20044 22436 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,827 basehttp 20044 36144 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,827 basehttp 20044 18612 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,834 basehttp 20044 4036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-09 21:44:42,835 basehttp 20044 36144 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,851 basehttp 20044 36144 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:42,851 basehttp 20044 4036 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:44:47,030 autoreload 9704 37004 Watching for file changes with StatReloader
+ERROR 2026-07-09 21:45:02,504 utils 9704 30848 Request failed: /
+ERROR 2026-07-09 21:45:02,505 utils 9704 30848 Exception: no such column: xmu_paper.created_at
+ERROR 2026-07-09 21:45:02,520 utils 9704 30848 Traceback: Traceback (most recent call last):
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: xmu_paper.created_at
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\Trae\Files\03-xmu-llap\xmu\views.py", line 16, in home
+    papers = HomePageService.get_papers()
+  File "d:\Trae\Files\03-xmu-llap\xmu\services.py", line 26, in get_papers
+    papers = list(Paper.objects.all())
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\Trae\Files\03-xmu-llap\.venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: xmu_paper.created_at
+
+ERROR 2026-07-09 21:45:02,523 views 9704 30848 Home page error: no such column: xmu_paper.created_at
+INFO 2026-07-09 21:45:02,569 basehttp 9704 30848 "GET / HTTP/1.1" 200 5571
+INFO 2026-07-09 21:45:14,802 basehttp 9704 33800 "GET / HTTP/1.1" 200 5571
+INFO 2026-07-09 21:45:15,022 basehttp 9704 33800 "GET /static/css/variables.css HTTP/1.1" 200 1930
+INFO 2026-07-09 21:45:15,025 basehttp 9704 33800 "GET /static/css/paper.css HTTP/1.1" 200 2351
+INFO 2026-07-09 21:45:15,029 basehttp 9704 33800 "GET /static/css/home.css HTTP/1.1" 200 4482
+INFO 2026-07-09 21:45:15,033 basehttp 9704 33800 "GET /static/css/research.css HTTP/1.1" 200 2305
+INFO 2026-07-09 21:45:15,035 basehttp 9704 28280 "GET /static/css/contact.css HTTP/1.1" 200 3846
+INFO 2026-07-09 21:45:15,036 basehttp 9704 33800 "GET /static/css/result.css HTTP/1.1" 200 2012
+INFO 2026-07-09 21:45:15,040 basehttp 9704 36840 "GET /static/css/style.css HTTP/1.1" 200 1679
+INFO 2026-07-09 21:45:15,043 basehttp 9704 28280 "GET /static/js/main.js HTTP/1.1" 200 3378
+INFO 2026-07-09 21:45:15,045 basehttp 9704 35248 "GET /static/css/gallery.css HTTP/1.1" 200 2267
+INFO 2026-07-09 21:45:15,048 basehttp 9704 35968 "GET /static/css/address.css HTTP/1.1" 200 1829
+INFO 2026-07-09 21:45:15,049 basehttp 9704 34020 "GET /static/css/navigator.css HTTP/1.1" 200 5833
+INFO 2026-07-09 21:45:15,049 basehttp 9704 33800 "GET /static/images/logo.png HTTP/1.1" 200 67046
+INFO 2026-07-09 21:45:15,052 basehttp 9704 36840 "GET /static/images/ip.png HTTP/1.1" 200 376016
+WARNING 2026-07-09 21:45:15,152 log 9704 36840 Not Found: /@vite/client
+WARNING 2026-07-09 21:45:15,153 basehttp 9704 36840 "GET /@vite/client HTTP/1.1" 404 4208
+WARNING 2026-07-09 21:46:29,905 log 9704 36840 Not Found: /@vite/client
+WARNING 2026-07-09 21:46:29,905 basehttp 9704 36840 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:47:30,313 basehttp 9704 36840 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-07-09 21:47:30,380 basehttp 9704 36840 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4195
+INFO 2026-07-09 21:47:30,403 basehttp 9704 34020 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-07-09 21:47:30,405 basehttp 9704 33800 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-07-09 21:47:30,406 basehttp 9704 35248 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-07-09 21:47:30,406 basehttp 9704 36840 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-07-09 21:47:30,407 basehttp 9704 35968 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2026-07-09 21:47:30,420 basehttp 9704 35968 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-07-09 21:47:30,421 basehttp 9704 36840 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2026-07-09 21:47:30,506 log 9704 36840 Not Found: /@vite/client
+WARNING 2026-07-09 21:47:30,506 basehttp 9704 36840 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:48:05,337 basehttp 9704 30848 "GET /admin/xmu/contactmessage/ HTTP/1.1" 200 18543
+INFO 2026-07-09 21:48:05,395 basehttp 9704 30848 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,397 basehttp 9704 35972 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,398 basehttp 9704 32256 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,402 basehttp 9704 30616 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,406 basehttp 9704 37368 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,409 basehttp 9704 30848 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,410 basehttp 9704 35972 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,412 basehttp 9704 32256 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,417 basehttp 9704 30616 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,418 basehttp 9704 15748 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-09 21:48:05,420 basehttp 9704 37368 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,421 basehttp 9704 30848 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,424 basehttp 9704 35972 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,424 basehttp 9704 32256 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,429 basehttp 9704 15748 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,443 basehttp 9704 32256 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,443 basehttp 9704 15748 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,445 basehttp 9704 35972 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,449 basehttp 9704 37368 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,451 basehttp 9704 30848 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:05,451 basehttp 9704 30616 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2026-07-09 21:48:39,430 autoreload 9704 37004 D:\Trae\Files\03-xmu-llap\xmu\models.py changed, reloading.
+INFO 2026-07-09 21:48:40,978 autoreload 9084 33024 Watching for file changes with StatReloader
+INFO 2026-07-09 21:48:46,185 autoreload 9084 33024 D:\Trae\Files\03-xmu-llap\xmu\models.py changed, reloading.
+INFO 2026-07-09 21:48:47,719 autoreload 27768 18268 Watching for file changes with StatReloader
+WARNING 2026-07-09 21:49:48,760 log 27768 7556 Not Found: /@vite/client
+WARNING 2026-07-09 21:49:48,761 basehttp 27768 7556 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:50:11,261 basehttp 27768 7472 "GET /members/ HTTP/1.1" 200 4512
+INFO 2026-07-09 21:50:11,393 basehttp 27768 37004 "GET /media/avatar.jpg HTTP/1.1" 200 4774
+INFO 2026-07-09 21:50:11,399 basehttp 27768 7472 "GET /static/css/members.css HTTP/1.1" 200 3542
+INFO 2026-07-09 21:50:11,409 basehttp 27768 29640 "GET /media/avatars/head.jpg HTTP/1.1" 200 81267
+INFO 2026-07-09 21:50:11,420 basehttp 27768 33860 "GET /media/avatars/bg.jpg HTTP/1.1" 200 922423
+WARNING 2026-07-09 21:50:11,470 log 27768 33860 Not Found: /@vite/client
+WARNING 2026-07-09 21:50:11,472 basehttp 27768 33860 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:50:27,115 basehttp 27768 5148 "GET /members/ HTTP/1.1" 200 4512
+INFO 2026-07-09 21:50:27,187 basehttp 27768 5148 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:27,195 basehttp 27768 36676 "GET /static/css/members.css HTTP/1.1" 200 3542
+INFO 2026-07-09 21:50:27,196 basehttp 27768 27724 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:27,202 basehttp 27768 3956 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:27,203 basehttp 27768 5148 "GET /media/avatar.jpg HTTP/1.1" 200 4774
+INFO 2026-07-09 21:50:27,204 basehttp 27768 28092 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:27,209 basehttp 27768 35280 "GET /media/avatars/head.jpg HTTP/1.1" 200 81267
+INFO 2026-07-09 21:50:27,217 basehttp 27768 27724 "GET /media/avatars/bg.jpg HTTP/1.1" 200 922423
+WARNING 2026-07-09 21:50:32,723 log 27768 33860 Not Found: /@vite/client
+WARNING 2026-07-09 21:50:32,724 basehttp 27768 33860 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:50:37,641 basehttp 27768 36676 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,641 basehttp 27768 5148 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,643 basehttp 27768 27724 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,644 basehttp 27768 3956 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,645 basehttp 27768 35280 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,646 basehttp 27768 28092 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:50:37,648 basehttp 27768 36676 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,553 basehttp 27768 3428 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,553 basehttp 27768 33860 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,554 basehttp 27768 29640 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,554 basehttp 27768 37004 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,557 basehttp 27768 7472 "GET /static/css/navigator.css HTTP/1.1" 200 5833
+INFO 2026-07-09 21:51:58,558 basehttp 27768 35368 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,559 basehttp 27768 3428 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,560 basehttp 27768 29640 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,560 basehttp 27768 33860 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,560 basehttp 27768 37004 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:51:58,568 basehttp 27768 37004 "GET /static/js/main.js HTTP/1.1" 304 0
+WARNING 2026-07-09 21:51:58,612 log 27768 37004 Not Found: /@vite/client
+WARNING 2026-07-09 21:51:58,612 basehttp 27768 37004 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:54:14,511 autoreload 15748 15380 Watching for file changes with StatReloader
+INFO 2026-07-09 21:54:35,382 basehttp 15748 37504 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:54:35,389 basehttp 15748 37504 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 21:54:35,389 basehttp 15748 14300 "GET /static/images/ip.png HTTP/1.1" 304 0
+WARNING 2026-07-09 21:54:35,452 log 15748 14300 Not Found: /@vite/client
+WARNING 2026-07-09 21:54:35,453 basehttp 15748 14300 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:55:41,738 basehttp 15748 14300 "GET /static/css/navigator.css HTTP/1.1" 304 0
+WARNING 2026-07-09 21:55:41,785 log 15748 14300 Not Found: /@vite/client
+WARNING 2026-07-09 21:55:41,786 basehttp 15748 14300 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:56:16,563 basehttp 15748 14300 "GET / HTTP/1.1" 200 8932
+INFO 2026-07-09 21:56:16,578 basehttp 15748 14300 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:56:16,775 basehttp 15748 14300 "GET /media/gallery_images/p1.jpg HTTP/1.1" 200 84917
+INFO 2026-07-09 21:56:16,783 basehttp 15748 14300 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 200 922423
+INFO 2026-07-09 21:56:16,795 basehttp 15748 36404 "GET /media/result_images/p5.jpg HTTP/1.1" 200 92773
+INFO 2026-07-09 21:56:16,800 basehttp 15748 36888 "GET /media/gallery_images/p3.jpg HTTP/1.1" 200 181792
+INFO 2026-07-09 21:56:16,807 basehttp 15748 34192 "GET /media/result_images/p6.jpg HTTP/1.1" 200 62342
+INFO 2026-07-09 21:56:16,808 basehttp 15748 37116 "GET /media/result_images/p8.jpg HTTP/1.1" 200 61069
+INFO 2026-07-09 21:56:16,808 basehttp 15748 37504 "GET /media/gallery_images/p2.jpg HTTP/1.1" 200 131830
+WARNING 2026-07-09 21:56:16,852 log 15748 37504 Not Found: /@vite/client
+WARNING 2026-07-09 21:56:16,853 basehttp 15748 37504 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 21:57:15,662 basehttp 15748 37676 "GET / HTTP/1.1" 200 8932
+INFO 2026-07-09 21:57:15,731 basehttp 15748 37676 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,734 basehttp 15748 5380 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,738 basehttp 15748 28372 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,740 basehttp 15748 37676 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,742 basehttp 15748 36152 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,743 basehttp 15748 5380 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,743 basehttp 15748 30152 "GET /static/css/navigator.css HTTP/1.1" 200 5833
+INFO 2026-07-09 21:57:15,744 basehttp 15748 37628 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,746 basehttp 15748 28372 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,758 basehttp 15748 5380 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,759 basehttp 15748 37628 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,759 basehttp 15748 36152 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,759 basehttp 15748 28372 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,760 basehttp 15748 37676 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,763 basehttp 15748 30152 "GET /media/gallery_images/p2.jpg HTTP/1.1" 200 131830
+INFO 2026-07-09 21:57:15,773 basehttp 15748 28372 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,774 basehttp 15748 37676 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 21:57:15,775 basehttp 15748 37628 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,667 basehttp 15748 36660 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4195
+INFO 2026-07-09 22:08:12,694 basehttp 15748 36660 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,698 basehttp 15748 12940 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,700 basehttp 15748 27592 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,701 basehttp 15748 34696 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,701 basehttp 15748 35784 "GET /static/css/navigator.css HTTP/1.1" 200 5777
+INFO 2026-07-09 22:08:12,702 basehttp 15748 36660 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,704 basehttp 15748 8964 "GET /static/css/gallery.css HTTP/1.1" 200 2218
+INFO 2026-07-09 22:08:12,705 basehttp 15748 12940 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,709 basehttp 15748 27592 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,710 basehttp 15748 35784 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,711 basehttp 15748 34696 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,715 basehttp 15748 36660 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,715 basehttp 15748 8964 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,720 basehttp 15748 12940 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,720 basehttp 15748 35784 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,721 basehttp 15748 34696 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,725 basehttp 15748 36660 "GET /media/gallery_images/p2.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,725 basehttp 15748 27592 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,726 basehttp 15748 8964 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,726 basehttp 15748 35784 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,730 basehttp 15748 12940 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,731 basehttp 15748 34696 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,733 basehttp 15748 27592 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,733 basehttp 15748 8964 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,733 basehttp 15748 36660 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,734 basehttp 15748 35784 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:12,741 basehttp 15748 35784 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+WARNING 2026-07-09 22:08:13,011 log 15748 35784 Not Found: /@vite/client
+WARNING 2026-07-09 22:08:13,012 basehttp 15748 35784 "GET /@vite/client HTTP/1.1" 404 4208
+WARNING 2026-07-09 22:08:13,028 log 15748 36660 Not Found: /@vite/client
+WARNING 2026-07-09 22:08:13,029 basehttp 15748 36660 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:08:18,986 basehttp 15748 35784 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:18,986 basehttp 15748 36660 "GET /static/css/navigator.css HTTP/1.1" 304 0
+WARNING 2026-07-09 22:08:19,071 log 15748 35784 Not Found: /@vite/client
+WARNING 2026-07-09 22:08:19,072 basehttp 15748 35784 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:08:26,112 basehttp 15748 3428 "GET / HTTP/1.1" 200 8932
+INFO 2026-07-09 22:08:26,169 basehttp 15748 3428 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,184 basehttp 15748 3428 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,193 basehttp 15748 37732 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,194 basehttp 15748 8968 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,197 basehttp 15748 20844 "GET /static/css/navigator.css HTTP/1.1" 200 5777
+INFO 2026-07-09 22:08:26,198 basehttp 15748 3428 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,199 basehttp 15748 8244 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,204 basehttp 15748 37732 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,206 basehttp 15748 34648 "GET /static/css/gallery.css HTTP/1.1" 200 2218
+INFO 2026-07-09 22:08:26,207 basehttp 15748 8968 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,211 basehttp 15748 20844 "GET /media/gallery_images/p2.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,213 basehttp 15748 3428 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,214 basehttp 15748 8244 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,214 basehttp 15748 37732 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,220 basehttp 15748 8968 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,223 basehttp 15748 34648 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,226 basehttp 15748 3428 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,226 basehttp 15748 37732 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,226 basehttp 15748 8244 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:08:26,227 basehttp 15748 8968 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:12:13,544 basehttp 15748 8244 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:12:13,545 basehttp 15748 8968 "GET /static/css/navigator.css HTTP/1.1" 200 5825
+WARNING 2026-07-09 22:12:13,667 log 15748 8968 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 22:12:13,669 basehttp 15748 8968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4316
+INFO 2026-07-09 22:13:02,497 basehttp 15748 6804 "GET /members/ HTTP/1.1" 200 4512
+INFO 2026-07-09 22:13:02,518 basehttp 15748 6804 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:13:02,519 basehttp 15748 35072 "GET /media/avatar.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:13:02,520 basehttp 15748 24820 "GET /static/css/navigator.css HTTP/1.1" 200 5873
+INFO 2026-07-09 22:13:02,529 basehttp 15748 24820 "GET /media/avatars/head.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:13:02,530 basehttp 15748 35072 "GET /media/avatars/bg.jpg HTTP/1.1" 304 0
+WARNING 2026-07-09 22:13:02,579 log 15748 35072 Not Found: /@vite/client
+WARNING 2026-07-09 22:13:02,579 basehttp 15748 35072 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:13:45,475 basehttp 15748 35072 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-09 22:13:45,489 basehttp 15748 35072 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:13:45,490 basehttp 15748 24820 "GET /static/css/gallery.css HTTP/1.1" 304 0
+WARNING 2026-07-09 22:13:45,540 log 15748 24820 Not Found: /@vite/client
+WARNING 2026-07-09 22:13:45,540 basehttp 15748 24820 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:14:17,134 basehttp 15748 24820 "GET /static/css/navigator.css HTTP/1.1" 304 0
+WARNING 2026-07-09 22:14:17,201 log 15748 24820 Not Found: /@vite/client
+WARNING 2026-07-09 22:14:17,201 basehttp 15748 24820 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:14:48,019 basehttp 15748 8968 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-09 22:14:48,105 basehttp 15748 28380 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:14:48,107 basehttp 15748 8244 "GET /static/css/navigator.css HTTP/1.1" 200 5873
+WARNING 2026-07-09 22:14:48,131 log 15748 8968 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 22:14:48,131 basehttp 15748 8968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4316
+INFO 2026-07-09 22:14:51,171 basehttp 15748 8968 "GET /members/ HTTP/1.1" 200 4512
+INFO 2026-07-09 22:14:51,266 basehttp 15748 28380 "GET /media/avatar.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:14:51,271 basehttp 15748 37080 "GET /media/avatars/head.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:14:51,271 basehttp 15748 8244 "GET /static/css/members.css HTTP/1.1" 200 5662
+INFO 2026-07-09 22:14:51,277 basehttp 15748 25584 "GET /media/avatars/bg.jpg HTTP/1.1" 304 0
+WARNING 2026-07-09 22:14:51,305 log 15748 8968 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-09 22:14:51,306 basehttp 15748 8968 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4316
+INFO 2026-07-09 22:15:10,625 basehttp 15748 8968 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:15:10,626 basehttp 15748 25584 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:16:54,413 autoreload 3656 23836 Watching for file changes with StatReloader
+INFO 2026-07-09 22:17:01,721 basehttp 3656 22816 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,740 basehttp 3656 22816 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,743 basehttp 3656 36916 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,744 basehttp 3656 37460 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,745 basehttp 3656 34040 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,746 basehttp 3656 22816 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,747 basehttp 3656 6524 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,749 basehttp 3656 4936 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,751 basehttp 3656 37460 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:01,929 basehttp 3656 36916 "GET /static/css/research.css HTTP/1.1" 200 2654
+INFO 2026-07-09 22:17:01,929 basehttp 3656 34040 "GET /static/js/main.js HTTP/1.1" 200 3074
+INFO 2026-07-09 22:17:09,202 basehttp 3656 3340 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4195
+INFO 2026-07-09 22:17:09,228 basehttp 3656 3340 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,229 basehttp 3656 35892 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,229 basehttp 3656 36972 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,231 basehttp 3656 17368 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,231 basehttp 3656 7476 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,246 basehttp 3656 7476 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,249 basehttp 3656 17368 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,949 basehttp 3656 7476 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,949 basehttp 3656 35892 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,951 basehttp 3656 36972 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,955 basehttp 3656 3340 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,957 basehttp 3656 7476 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,960 basehttp 3656 36972 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,961 basehttp 3656 37240 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,963 basehttp 3656 3340 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,963 basehttp 3656 25100 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:17:09,963 basehttp 3656 35892 "GET /static/css/research.css HTTP/1.1" 200 2654
+INFO 2026-07-09 22:17:09,966 basehttp 3656 7476 "GET /static/js/main.js HTTP/1.1" 200 3074
+WARNING 2026-07-09 22:17:09,981 log 3656 17368 Not Found: /@vite/client
+INFO 2026-07-09 22:17:09,982 basehttp 3656 17368 - Broken pipe from ('127.0.0.1', 60132)
+WARNING 2026-07-09 22:17:10,352 log 3656 7476 Not Found: /@vite/client
+WARNING 2026-07-09 22:17:10,354 basehttp 3656 7476 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:20:42,716 basehttp 3656 37460 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:20:42,716 basehttp 3656 4936 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:20:42,716 basehttp 3656 34040 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:20:42,717 basehttp 3656 36916 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:00,349 basehttp 3656 36916 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:22:00,404 basehttp 3656 37460 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:00,408 basehttp 3656 36916 "GET /static/css/members.css HTTP/1.1" 200 3941
+INFO 2026-07-09 22:22:00,408 basehttp 3656 4936 "GET /static/css/navigator.css HTTP/1.1" 200 5890
+INFO 2026-07-09 22:22:05,087 basehttp 3656 35892 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,088 basehttp 3656 7476 "GET /static/css/navigator.css HTTP/1.1" 200 5890
+INFO 2026-07-09 22:22:05,089 basehttp 3656 25100 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,119 basehttp 3656 7476 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,123 basehttp 3656 25100 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,129 basehttp 3656 25100 "GET /media/gallery_images/p2.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,137 basehttp 3656 7476 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,138 basehttp 3656 25100 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,139 basehttp 3656 35892 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,141 basehttp 3656 3340 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,142 basehttp 3656 37240 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,143 basehttp 3656 35892 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:05,156 basehttp 3656 35892 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+WARNING 2026-07-09 22:22:05,693 log 3656 35892 Not Found: /@vite/client
+WARNING 2026-07-09 22:22:05,693 basehttp 3656 35892 "GET /@vite/client HTTP/1.1" 404 4208
+WARNING 2026-07-09 22:22:06,210 log 3656 35892 Not Found: /@vite/client
+WARNING 2026-07-09 22:22:06,211 basehttp 3656 35892 "GET /@vite/client HTTP/1.1" 404 4208
+INFO 2026-07-09 22:22:09,304 basehttp 3656 36916 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,309 basehttp 3656 4936 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,310 basehttp 3656 35836 "GET /media/gallery_images/p2.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,310 basehttp 3656 37460 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,311 basehttp 3656 34040 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,312 basehttp 3656 14292 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,312 basehttp 3656 36916 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,321 basehttp 3656 36916 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,322 basehttp 3656 14292 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,323 basehttp 3656 34040 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:09,323 basehttp 3656 35836 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:43,807 basehttp 3656 35836 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:43,808 basehttp 3656 34040 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:22:43,809 basehttp 3656 14292 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:08,235 basehttp 3656 14292 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:24,929 basehttp 3656 14292 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-09 22:23:24,994 basehttp 3656 14292 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:24,995 basehttp 3656 34040 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:24,996 basehttp 3656 35836 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:32,097 basehttp 3656 35836 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:50,102 basehttp 3656 35836 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:23:50,158 basehttp 3656 35836 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:50,159 basehttp 3656 34040 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:23:51,596 basehttp 3656 34040 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:23:57,145 basehttp 3656 34040 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:23:57,995 basehttp 3656 34040 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:24:17,807 basehttp 3656 34040 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:24:17,866 basehttp 3656 14292 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:24:17,867 basehttp 3656 34040 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:24:17,868 basehttp 3656 35836 "GET /static/css/navigator.css HTTP/1.1" 200 5892
+INFO 2026-07-09 22:24:19,348 basehttp 3656 35836 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:24:19,402 basehttp 3656 35836 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:24:43,947 basehttp 3656 35836 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:24:43,997 basehttp 3656 35836 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:24:44,000 basehttp 3656 34040 "GET /static/css/navigator.css HTTP/1.1" 200 5892
+INFO 2026-07-09 22:25:01,183 basehttp 3656 34040 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:25:01,184 basehttp 3656 35836 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:25:01,185 basehttp 3656 14292 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,024 basehttp 3656 14292 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-09 22:26:28,096 basehttp 3656 14292 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,099 basehttp 3656 37460 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,101 basehttp 3656 36916 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,102 basehttp 3656 4936 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,104 basehttp 3656 14292 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,105 basehttp 3656 35836 "GET /static/css/style.css HTTP/1.1" 200 1702
+INFO 2026-07-09 22:26:28,107 basehttp 3656 34040 "GET /static/css/navigator.css HTTP/1.1" 200 5889
+INFO 2026-07-09 22:26:28,108 basehttp 3656 37460 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,108 basehttp 3656 36916 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:28,108 basehttp 3656 4936 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:34,112 basehttp 3656 34040 "GET /media/avatars/head.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:34,112 basehttp 3656 4936 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:34,113 basehttp 3656 36916 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:34,114 basehttp 3656 37460 "GET /media/avatar.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:34,114 basehttp 3656 35836 "GET /media/avatars/bg.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:41,060 basehttp 3656 35836 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:26:57,889 basehttp 3656 35836 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:26:57,945 basehttp 3656 35836 "GET /static/css/navigator.css HTTP/1.1" 200 5891
+INFO 2026-07-09 22:27:03,809 basehttp 3656 35836 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:27:03,811 basehttp 3656 37460 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:27:03,812 basehttp 3656 36916 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:34:14,667 basehttp 3656 21736 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:34:14,671 basehttp 3656 37384 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:34:14,671 basehttp 3656 35664 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:34:14,674 basehttp 3656 31048 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:34:14,674 basehttp 3656 33620 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,301 basehttp 3656 29520 "GET /admin/ HTTP/1.1" 200 12083
+INFO 2026-07-09 22:49:49,352 basehttp 3656 29520 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,354 basehttp 3656 35996 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,356 basehttp 3656 35124 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,358 basehttp 3656 2276 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,358 basehttp 3656 27980 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,375 basehttp 3656 27980 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,376 basehttp 3656 2276 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,378 basehttp 3656 35124 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,381 basehttp 3656 29520 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:49,382 basehttp 3656 35996 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,457 basehttp 3656 35996 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-09 22:49:53,543 basehttp 3656 35996 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,546 basehttp 3656 29520 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,548 basehttp 3656 27980 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,549 basehttp 3656 2276 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,549 basehttp 3656 35124 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,551 basehttp 3656 5780 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,556 basehttp 3656 35996 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,558 basehttp 3656 29520 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,560 basehttp 3656 35124 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,561 basehttp 3656 2276 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,561 basehttp 3656 27980 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,563 basehttp 3656 5780 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,574 basehttp 3656 27980 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,574 basehttp 3656 2276 "GET /media/gallery_images/p2.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,580 basehttp 3656 29520 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,580 basehttp 3656 35996 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,580 basehttp 3656 5780 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,582 basehttp 3656 35124 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,582 basehttp 3656 27980 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:49:53,588 basehttp 3656 35124 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,290 basehttp 3656 35124 "GET /admin/xmu/contactmessage/ HTTP/1.1" 200 18690
+INFO 2026-07-09 22:50:28,360 basehttp 3656 35124 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,363 basehttp 3656 35996 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,364 basehttp 3656 29520 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,365 basehttp 3656 27980 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,366 basehttp 3656 2276 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,374 basehttp 3656 35124 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,374 basehttp 3656 5780 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-09 22:50:28,377 basehttp 3656 35996 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,377 basehttp 3656 27980 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,378 basehttp 3656 29520 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,380 basehttp 3656 2276 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,401 basehttp 3656 2276 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,407 basehttp 3656 29520 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:28,409 basehttp 3656 2276 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2026-07-09 22:50:42,107 basehttp 3656 2276 "GET /admin/xmu/uploadedfile/ HTTP/1.1" 200 46818
+INFO 2026-07-09 22:50:42,173 basehttp 3656 2276 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-09 22:50:44,911 basehttp 3656 2276 "GET /admin/ HTTP/1.1" 200 12083
+INFO 2026-07-09 22:53:36,589 basehttp 3656 2276 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-09 22:53:36,638 basehttp 3656 29520 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,640 basehttp 3656 2276 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,640 basehttp 3656 27980 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,644 basehttp 3656 27980 "GET /media/avatar.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,650 basehttp 3656 2276 "GET /media/avatars/head.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,651 basehttp 3656 29520 "GET /media/avatars/bg.jpg HTTP/1.1" 304 0
+INFO 2026-07-09 22:53:36,652 basehttp 3656 27980 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:37,928 autoreload 42216 47848 Watching for file changes with StatReloader
+INFO 2026-07-15 14:37:40,044 basehttp 42216 6040 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-15 14:37:40,117 basehttp 42216 6040 "GET /static/css/variables.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,119 basehttp 42216 47492 "GET /static/css/style.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,128 basehttp 42216 16316 "GET /static/css/navigator.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,128 basehttp 42216 45492 "GET /static/css/paper.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,128 basehttp 42216 6040 "GET /static/css/address.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,129 basehttp 42216 47492 "GET /static/css/gallery.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,129 basehttp 42216 44352 "GET /static/css/contact.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,130 basehttp 42216 45808 "GET /static/css/result.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,133 basehttp 42216 45492 "GET /static/css/research.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,135 basehttp 42216 16316 "GET /static/css/home.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,136 basehttp 42216 47492 "GET /static/js/main.js HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,140 basehttp 42216 45808 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,143 basehttp 42216 6040 "GET /media/gallery_images/p1.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,145 basehttp 42216 16316 "GET /media/gallery_images/p3.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,145 basehttp 42216 47492 "GET /media/result_images/p5.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,145 basehttp 42216 45492 "GET /media/result_images/p6.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,146 basehttp 42216 45808 "GET /media/result_images/p8.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,153 basehttp 42216 45492 "GET /media/bg/bg_5W8TiaB.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,153 basehttp 42216 45808 "GET /static/images/ip.png HTTP/1.1" 304 0
+INFO 2026-07-15 14:37:40,201 basehttp 42216 44352 "GET /media/gallery_images/p2.jpg HTTP/1.1" 200 131830
+WARNING 2026-07-15 14:37:40,453 log 42216 44352 Not Found: /favicon.ico
+WARNING 2026-07-15 14:37:40,454 basehttp 42216 44352 "GET /favicon.ico HTTP/1.1" 404 4782
+INFO 2026-07-15 14:38:48,332 basehttp 42216 44352 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-15 14:38:48,390 basehttp 42216 47492 "GET /static/css/members.css HTTP/1.1" 304 0
+INFO 2026-07-15 14:38:48,402 basehttp 42216 44352 "GET /media/avatar.jpg HTTP/1.1" 200 4774
+INFO 2026-07-15 14:38:48,407 basehttp 42216 45808 "GET /media/avatars/head.jpg HTTP/1.1" 200 81267
+INFO 2026-07-15 14:38:48,420 basehttp 42216 45492 "GET /media/avatars/bg.jpg HTTP/1.1" 200 922423
+INFO 2026-07-15 14:39:18,854 basehttp 42216 45492 "GET /tree-hole HTTP/1.1" 301 0
+INFO 2026-07-15 14:39:18,870 basehttp 42216 45808 "GET /tree-hole/ HTTP/1.1" 200 3731
+INFO 2026-07-15 14:39:18,924 basehttp 42216 45808 "GET /static/css/tree-hole.css HTTP/1.1" 200 8971
+INFO 2026-07-15 14:39:18,925 basehttp 42216 44352 "GET /static/js/tree-hole.js HTTP/1.1" 200 17263
+WARNING 2026-07-15 14:39:29,126 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:29,128 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:39:30,668 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:30,669 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:39:31,613 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:31,615 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:39:32,311 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:32,313 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:39:32,954 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:32,956 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:39:33,334 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:39:33,335 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:40:06,331 log 42216 45808 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-15 14:40:06,332 basehttp 42216 45808 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4893
+WARNING 2026-07-15 14:40:13,963 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:40:13,966 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+WARNING 2026-07-15 14:40:24,101 log 42216 45808 Forbidden (CSRF token missing.): /api/tree-hole/
+WARNING 2026-07-15 14:40:24,103 basehttp 42216 45808 "POST /api/tree-hole/ HTTP/1.1" 403 2501
+INFO 2026-07-15 14:45:23,196 autoreload 31868 44884 Watching for file changes with StatReloader
+INFO 2026-07-15 14:45:25,723 basehttp 31868 46152 "GET /tree-hole/ HTTP/1.1" 200 3731
+INFO 2026-07-15 14:45:25,790 basehttp 31868 46152 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+WARNING 2026-07-15 14:45:25,819 log 31868 34264 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-15 14:45:25,821 basehttp 31868 34264 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4893
+INFO 2026-07-15 14:45:25,922 basehttp 31868 46152 "GET /static/js/tree-hole.js HTTP/1.1" 200 18019
+INFO 2026-07-15 14:45:31,008 basehttp 31868 46152 "POST /api/tree-hole/ HTTP/1.1" 200 152
+INFO 2026-07-15 14:45:54,232 basehttp 31868 46152 "GET /admin/ HTTP/1.1" 200 12083
+INFO 2026-07-15 14:45:54,302 basehttp 31868 34264 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-07-15 14:45:54,305 basehttp 31868 46152 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-07-15 14:45:54,305 basehttp 31868 42216 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-07-15 14:45:54,314 basehttp 31868 47016 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-07-15 14:45:54,318 basehttp 31868 47028 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-07-15 14:45:54,340 basehttp 31868 46152 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-07-15 14:45:54,341 basehttp 31868 42216 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-07-15 14:45:54,346 basehttp 31868 34264 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-07-15 14:45:54,346 basehttp 31868 47016 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-07-15 14:45:54,348 basehttp 31868 47028 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-07-15 14:45:58,089 basehttp 31868 47028 "GET /admin/ HTTP/1.1" 200 12083
+INFO 2026-07-15 14:46:02,603 basehttp 31868 47028 "GET /admin/xmu/contactmessage/ HTTP/1.1" 200 18690
+INFO 2026-07-15 14:46:02,690 basehttp 31868 47028 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2026-07-15 14:46:02,696 basehttp 31868 47016 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 14:46:02,700 basehttp 31868 42216 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-07-15 14:46:02,716 basehttp 31868 46152 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-07-15 14:46:02,724 basehttp 31868 47016 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-07-15 14:46:02,727 basehttp 31868 42216 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-07-15 14:46:02,733 basehttp 31868 47028 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-07-15 14:46:02,737 basehttp 31868 41988 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-07-15 14:46:02,759 basehttp 31868 41988 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-07-15 14:46:02,763 basehttp 31868 34264 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-07-15 14:46:02,811 basehttp 31868 34264 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-07-15 14:46:02,845 basehttp 31868 46152 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-07-15 14:46:02,872 basehttp 31868 34264 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-07-15 14:46:02,877 basehttp 31868 46152 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-07-15 14:46:07,383 basehttp 31868 46152 "GET /admin/xmu/uploadedfile/ HTTP/1.1" 200 46818
+INFO 2026-07-15 14:46:07,434 basehttp 31868 46152 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 14:46:12,175 basehttp 31868 46152 "GET /admin/xmu/uploadedfile/32/change/ HTTP/1.1" 200 11426
+INFO 2026-07-15 14:46:12,234 basehttp 31868 41988 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 14:46:12,242 basehttp 31868 46152 "GET /static/admin/css/forms.css HTTP/1.1" 200 9047
+INFO 2026-07-15 14:46:12,254 basehttp 31868 34264 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-07-15 14:46:12,263 basehttp 31868 41988 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11900
+INFO 2026-07-15 14:46:12,273 basehttp 31868 46152 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+WARNING 2026-07-15 14:46:16,390 log 31868 46152 Not Found: /media/files/jpg/Image_1749714141594.jpg
+WARNING 2026-07-15 14:46:16,392 basehttp 31868 46152 "GET /media/files/jpg/Image_1749714141594.jpg HTTP/1.1" 404 5078
+INFO 2026-07-15 14:46:18,078 basehttp 31868 46152 "GET /admin/xmu/uploadedfile/32/change/ HTTP/1.1" 200 11426
+INFO 2026-07-15 14:46:21,069 basehttp 31868 46152 "GET /admin/xmu/paper/ HTTP/1.1" 200 14701
+INFO 2026-07-15 14:46:21,126 basehttp 31868 46152 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 14:46:22,848 basehttp 31868 46152 "GET /admin/xmu/ HTTP/1.1" 200 8142
+INFO 2026-07-15 14:46:24,580 basehttp 31868 46152 "GET /admin/xmu/paper/ HTTP/1.1" 200 14701
+INFO 2026-07-15 14:46:26,063 basehttp 31868 46152 "GET /admin/xmu/uploadedfile/32/change/ HTTP/1.1" 200 11426
+INFO 2026-07-15 14:47:11,047 basehttp 31868 46152 "GET /admin/xmu/uploadedfile/32/change/ HTTP/1.1" 200 11426
+INFO 2026-07-15 14:47:11,095 basehttp 31868 46152 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 14:51:48,378 basehttp 31868 46152 "GET /tree-hole/ HTTP/1.1" 200 3731
+INFO 2026-07-15 14:51:48,438 basehttp 31868 47544 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+WARNING 2026-07-15 14:51:48,443 log 31868 46152 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-07-15 14:51:48,443 basehttp 31868 46152 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4893
+INFO 2026-07-15 14:51:48,454 basehttp 31868 46152 "GET /static/js/tree-hole.js HTTP/1.1" 304 0
+INFO 2026-07-15 14:53:09,390 autoreload 31868 44884 D:\Trae\Files\03-xmu-llap\xmu\models.py changed, reloading.
+INFO 2026-07-15 14:53:10,406 autoreload 46112 27660 Watching for file changes with StatReloader
+INFO 2026-07-15 14:55:00,074 autoreload 46112 27660 D:\Trae\Files\03-xmu-llap\xmu\services.py changed, reloading.
+INFO 2026-07-15 14:55:00,907 autoreload 12132 46360 Watching for file changes with StatReloader
+INFO 2026-07-15 15:05:16,575 autoreload 12980 47708 Watching for file changes with StatReloader
+INFO 2026-07-15 15:05:18,439 basehttp 12980 48120 "GET /admin/xmu/uploadedfile/32/change/ HTTP/1.1" 200 12058
+INFO 2026-07-15 15:05:18,499 basehttp 12980 48120 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:20,769 basehttp 12980 48120 "GET /admin/xmu/uploadedfile/ HTTP/1.1" 200 47450
+INFO 2026-07-15 15:05:20,830 basehttp 12980 48120 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:23,302 basehttp 12980 48120 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 11544
+INFO 2026-07-15 15:05:23,359 basehttp 12980 48120 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:24,925 basehttp 12980 48120 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 13598
+INFO 2026-07-15 15:05:24,974 basehttp 12980 48120 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:25,102 basehttp 12980 22172 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-07-15 15:05:31,855 basehttp 12980 22172 "POST /api/tree-hole/ HTTP/1.1" 200 153
+INFO 2026-07-15 15:05:34,735 basehttp 12980 22172 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 14013
+INFO 2026-07-15 15:05:34,775 basehttp 12980 22172 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:38,596 basehttp 12980 22172 "GET /admin/xmu/treeholemessage/2/change/ HTTP/1.1" 200 13086
+INFO 2026-07-15 15:05:38,649 basehttp 12980 22172 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:41,255 basehttp 12980 22172 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 11544
+INFO 2026-07-15 15:05:41,307 basehttp 12980 22172 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:44,357 basehttp 12980 22172 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 14013
+INFO 2026-07-15 15:05:44,409 basehttp 12980 22172 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:05:59,639 basehttp 12980 22172 "GET / HTTP/1.1" 200 8983
+INFO 2026-07-15 15:06:45,237 basehttp 12980 22172 "GET /members/ HTTP/1.1" 200 6014
+INFO 2026-07-15 15:09:06,672 basehttp 12980 22172 "GET /tree-hole/ HTTP/1.1" 200 3731
+INFO 2026-07-15 15:09:06,720 basehttp 12980 22172 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:09:06,733 basehttp 12980 22172 "GET /static/js/tree-hole.js HTTP/1.1" 200 17600
+INFO 2026-07-15 15:11:57,111 basehttp 12980 472 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81 HTTP/1.1" 302 0
+INFO 2026-07-15 15:11:57,164 basehttp 12980 472 "GET /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5003
+INFO 2026-07-15 15:11:57,190 basehttp 12980 472 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,194 basehttp 12980 28824 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,197 basehttp 12980 4532 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,197 basehttp 12980 29964 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,198 basehttp 12980 47956 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,238 basehttp 12980 29964 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-07-15 15:11:57,239 basehttp 12980 47956 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+WARNING 2026-07-15 15:11:57,340 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:11:57,341 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:12:05,002 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5138
+WARNING 2026-07-15 15:12:05,065 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:12:05,066 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:12:16,610 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5138
+WARNING 2026-07-15 15:12:16,659 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:12:16,660 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:12:25,221 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5141
+WARNING 2026-07-15 15:12:25,270 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:12:25,271 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:12:44,643 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5141
+WARNING 2026-07-15 15:12:44,691 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:12:44,692 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:13:14,951 basehttp 12980 22172 "GET /admin/auth/user/ HTTP/1.1" 200 14151
+INFO 2026-07-15 15:13:15,013 basehttp 12980 22172 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:13:15,049 basehttp 12980 22172 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-07-15 15:13:17,269 basehttp 12980 22172 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 25981
+INFO 2026-07-15 15:13:17,346 basehttp 12980 39116 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:13:17,377 basehttp 12980 44868 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2026-07-15 15:13:17,378 basehttp 12980 40564 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2026-07-15 15:13:17,380 basehttp 12980 22172 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2026-07-15 15:13:17,381 basehttp 12980 16992 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2026-07-15 15:13:17,469 basehttp 12980 44868 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-07-15 15:13:17,470 basehttp 12980 16992 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2026-07-15 15:13:17,471 basehttp 12980 39116 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-07-15 15:13:17,472 basehttp 12980 40564 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2026-07-15 15:13:17,473 basehttp 12980 22172 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2026-07-15 15:13:35,606 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5138
+WARNING 2026-07-15 15:13:35,649 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:13:35,651 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:13:50,481 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5138
+WARNING 2026-07-15 15:13:50,529 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:13:50,529 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:17:49,552 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 200 5138
+WARNING 2026-07-15 15:17:49,601 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:17:49,603 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:17:53,625 basehttp 12980 47956 "POST /admin/login/?next=/admin/xmu/treeholemessage/%25EF%25BC%2589%25E6%259F%25A5%25E7%259C%258B%25E5%2592%258C%25E7%25AE%25A1%25E7%2590%2586%25E6%2589%2580%25E6%259C%2589%25E6%25A0%2591%25E6%25B4%259E%25E7%2595%2599%25E8%25A8%2580%25EF%25BC%258C%25E7%259B%25B4%25E8%25A7%2582%25E5%25B1%2595%25E7%25A4%25BA%25E5%2586%2585%25E5%25AE%25B9%25E6%2591%2598%25E8%25A6%2581%25E3%2580%2581%25E6%258F%2590%25E4%25BA%25A4%25E6%2597%25B6%25E9%2597%25B4%25E5%2592%258C%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E5%259B%25BE%25EF%25BC%2581 HTTP/1.1" 302 0
+INFO 2026-07-15 15:17:53,634 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81 HTTP/1.1" 301 0
+INFO 2026-07-15 15:17:53,641 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81/ HTTP/1.1" 302 0
+INFO 2026-07-15 15:17:53,651 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81/change/ HTTP/1.1" 302 0
+INFO 2026-07-15 15:17:53,674 basehttp 12980 47956 "GET /admin/ HTTP/1.1" 200 13255
+INFO 2026-07-15 15:17:53,687 basehttp 12980 47956 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-07-15 15:17:53,703 basehttp 12980 47668 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-07-15 15:17:53,705 basehttp 12980 28652 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-07-15 15:17:53,705 basehttp 12980 43660 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-07-15 15:17:53,715 basehttp 12980 47956 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+WARNING 2026-07-15 15:17:53,766 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:17:53,766 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:18:02,364 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81 HTTP/1.1" 301 0
+INFO 2026-07-15 15:18:02,371 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81/ HTTP/1.1" 302 0
+INFO 2026-07-15 15:18:02,378 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/%EF%BC%89%E6%9F%A5%E7%9C%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%A0%91%E6%B4%9E%E7%95%99%E8%A8%80%EF%BC%8C%E7%9B%B4%E8%A7%82%E5%B1%95%E7%A4%BA%E5%86%85%E5%AE%B9%E6%91%98%E8%A6%81%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%97%B4%E5%92%8C%E6%98%AF%E5%90%A6%E6%9C%89%E5%9B%BE%EF%BC%81/change/ HTTP/1.1" 302 0
+INFO 2026-07-15 15:18:02,396 basehttp 12980 47956 "GET /admin/ HTTP/1.1" 200 13255
+WARNING 2026-07-15 15:18:02,450 log 12980 47956 Not Found: /@vite/client
+WARNING 2026-07-15 15:18:02,451 basehttp 12980 47956 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:18:04,605 basehttp 12980 47956 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 14013
+INFO 2026-07-15 15:18:04,629 basehttp 12980 47956 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2026-07-15 15:18:04,639 basehttp 12980 47668 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-07-15 15:18:04,643 basehttp 12980 47956 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-07-15 15:18:04,645 basehttp 12980 48016 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-07-15 15:18:04,646 basehttp 12980 45064 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-07-15 15:18:04,646 basehttp 12980 28652 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:18:04,649 basehttp 12980 47668 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-07-15 15:18:04,652 basehttp 12980 47956 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-07-15 15:18:04,654 basehttp 12980 45064 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-07-15 15:18:04,655 basehttp 12980 28652 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-07-15 15:18:04,657 basehttp 12980 43660 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-07-15 15:18:04,660 basehttp 12980 48016 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-07-15 15:18:04,690 basehttp 12980 48016 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-07-15 15:18:04,716 basehttp 12980 48016 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-07-15 15:18:04,717 basehttp 12980 43660 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+WARNING 2026-07-15 15:18:04,768 log 12980 43660 Not Found: /@vite/client
+WARNING 2026-07-15 15:18:04,768 basehttp 12980 43660 "GET /@vite/client HTTP/1.1" 404 4785
+INFO 2026-07-15 15:29:15,668 basehttp 12980 14036 "GET /tree-hole/ HTTP/1.1" 200 3746
+INFO 2026-07-15 15:29:15,720 basehttp 12980 14036 "GET /static/css/tree-hole.css HTTP/1.1" 200 9219
+INFO 2026-07-15 15:29:15,742 basehttp 12980 14036 "GET /static/js/tree-hole.js HTTP/1.1" 200 16549
+INFO 2026-07-15 15:29:22,974 basehttp 12980 14036 "POST /api/tree-hole/ HTTP/1.1" 200 153
+INFO 2026-07-15 15:29:25,337 basehttp 12980 14036 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 25981
+INFO 2026-07-15 15:29:25,408 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:26,560 basehttp 12980 14036 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 14428
+INFO 2026-07-15 15:29:26,610 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:35,646 basehttp 12980 14036 "POST /api/tree-hole/upload-image/ HTTP/1.1" 200 278
+INFO 2026-07-15 15:29:37,063 basehttp 12980 14036 "POST /api/tree-hole/ HTTP/1.1" 200 175
+INFO 2026-07-15 15:29:39,557 basehttp 12980 14036 "GET /admin/xmu/treeholemessage/ HTTP/1.1" 200 14846
+INFO 2026-07-15 15:29:39,598 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:43,306 basehttp 12980 14036 "GET /admin/xmu/treeholemessage/4/change/ HTTP/1.1" 200 13357
+INFO 2026-07-15 15:29:43,359 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:45,548 basehttp 12980 14036 "GET /media/treehole/img_2735c65b02a6.jpg HTTP/1.1" 200 231258
+INFO 2026-07-15 15:29:48,589 basehttp 12980 14036 "GET /admin/xmu/treeholemessage/4/change/ HTTP/1.1" 200 13357
+INFO 2026-07-15 15:29:49,814 basehttp 12980 14036 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 13590
+INFO 2026-07-15 15:29:49,865 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:52,874 basehttp 12980 14036 "GET /admin/xmu/treeholeimage/1/change/ HTTP/1.1" 200 11391
+INFO 2026-07-15 15:29:52,926 basehttp 12980 14036 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:29:54,471 basehttp 12980 14036 "GET /media/treehole/img_2735c65b02a6.jpg HTTP/1.1" 304 0
+INFO 2026-07-15 15:29:55,775 basehttp 12980 14036 "GET /admin/xmu/treeholeimage/1/change/ HTTP/1.1" 200 11391
+INFO 2026-07-15 15:29:56,241 basehttp 12980 14036 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 13590
+INFO 2026-07-15 15:31:55,672 autoreload 44640 8720 Watching for file changes with StatReloader
+INFO 2026-07-15 15:32:10,481 autoreload 40752 37692 Watching for file changes with StatReloader
+INFO 2026-07-15 15:32:15,423 basehttp 40752 29368 "GET /tree-hole/ HTTP/1.1" 200 3746
+INFO 2026-07-15 15:32:15,469 basehttp 40752 29368 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:32:15,479 basehttp 40752 29368 "GET /static/js/tree-hole.js HTTP/1.1" 304 0
+INFO 2026-07-15 15:32:17,746 basehttp 40752 29368 "GET /tree-hole/ HTTP/1.1" 200 3746
+INFO 2026-07-15 15:32:18,596 basehttp 40752 29368 "GET /tree-hole/ HTTP/1.1" 200 3746
+WARNING 2026-07-15 15:32:37,350 log 40752 29368 Not Found: /th/
+WARNING 2026-07-15 15:32:37,351 basehttp 40752 29368 "GET /th/ HTTP/1.1" 404 4758
+WARNING 2026-07-15 15:32:55,573 log 40752 29368 Not Found: /th/
+WARNING 2026-07-15 15:32:55,573 basehttp 40752 29368 "GET /th/ HTTP/1.1" 404 4758
+INFO 2026-07-15 15:33:01,428 autoreload 14000 39416 Watching for file changes with StatReloader
+WARNING 2026-07-15 15:33:03,157 log 14000 47400 Not Found: /th/
+WARNING 2026-07-15 15:33:03,158 basehttp 14000 47400 "GET /th/ HTTP/1.1" 404 4758
+WARNING 2026-07-15 15:33:03,876 log 14000 47400 Not Found: /th/
+WARNING 2026-07-15 15:33:03,880 basehttp 14000 47400 "GET /th/ HTTP/1.1" 404 4758
+INFO 2026-07-15 15:36:49,512 autoreload 14000 39416 D:\Trae\Files\03-xmu-llap\xmu\urls.py changed, reloading.
+INFO 2026-07-15 15:36:50,301 autoreload 16048 44924 Watching for file changes with StatReloader
+INFO 2026-07-15 15:37:22,445 basehttp 16048 44404 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 15:37:22,485 basehttp 16048 44404 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+INFO 2026-07-15 15:37:22,627 basehttp 16048 44404 "GET /static/js/tree-hole.js HTTP/1.1" 200 16535
+INFO 2026-07-15 15:37:26,412 basehttp 16048 44404 "POST /api/th/ HTTP/1.1" 200 153
+INFO 2026-07-15 15:37:33,222 basehttp 16048 44404 "POST /api/th/upload-image/ HTTP/1.1" 200 249
+INFO 2026-07-15 15:37:34,816 basehttp 16048 44404 "POST /api/th/ HTTP/1.1" 200 175
+INFO 2026-07-15 15:37:41,285 basehttp 16048 44404 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 13958
+INFO 2026-07-15 15:37:41,342 basehttp 16048 44404 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:37:43,462 basehttp 16048 44404 "GET /admin/xmu/treeholeimage/2/change/ HTTP/1.1" 200 11391
+INFO 2026-07-15 15:37:43,517 basehttp 16048 44404 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:37:45,767 basehttp 16048 44404 "GET /admin/xmu/treeholeimage/ HTTP/1.1" 200 13958
+INFO 2026-07-15 15:37:49,167 basehttp 16048 44404 "GET /admin/xmu/treeholeimage/2/change/ HTTP/1.1" 200 11391
+INFO 2026-07-15 15:37:49,215 basehttp 16048 44404 "GET /admin/jsi18n/ HTTP/1.1" 200 8560
+INFO 2026-07-15 15:37:50,455 basehttp 16048 44404 "GET /media/treehole/img_68d54ead8911.png HTTP/1.1" 200 78660
+INFO 2026-07-15 17:25:37,169 autoreload 14376 9236 Watching for file changes with StatReloader
+INFO 2026-07-15 17:25:40,484 basehttp 14376 35036 "GET /th HTTP/1.1" 301 0
+INFO 2026-07-15 17:25:40,508 basehttp 14376 38848 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:25:40,593 basehttp 14376 38848 "GET /static/css/tree-hole.css HTTP/1.1" 304 0
+INFO 2026-07-15 17:25:40,603 basehttp 14376 38848 "GET /static/js/tree-hole.js HTTP/1.1" 304 0
+WARNING 2026-07-15 17:25:40,697 log 14376 38848 Not Found: /favicon.ico
+WARNING 2026-07-15 17:25:40,699 basehttp 14376 38848 "GET /favicon.ico HTTP/1.1" 404 4761
+INFO 2026-07-15 17:28:50,098 basehttp 14376 38848 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:28:54,695 basehttp 14376 38848 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:29:00,670 autoreload 3496 21440 Watching for file changes with StatReloader
+INFO 2026-07-15 17:29:03,224 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:29:04,219 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:29:04,944 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3746
+INFO 2026-07-15 17:29:15,459 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3713
+INFO 2026-07-15 17:30:53,143 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3752
+INFO 2026-07-15 17:31:04,608 basehttp 3496 16876 "GET /th/ HTTP/1.1" 200 3758

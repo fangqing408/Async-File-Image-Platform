@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLAP</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/navigator.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
@@ -17,7 +18,6 @@
 </head>
 <body>
     <style> body { background-image: url("{{ conf.avatar.url }}"); } </style>
-    <!-- Navigator -->
     <header>
     <div class="logo">
         <img src="{% static 'images/logo.png' %}" alt="Logo">
@@ -47,31 +47,28 @@
 </header>
 
 
-    <!-- Home Section-->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1 style="color: black;">Welcome to Xmu-LLAP</h1>
+            <h1>Welcome to Xmu-LLAP</h1>
             <p>{{conf.quote}} -- {{conf.author}}</p>
             <button class="cta-button" data-target="research_directions" onclick="handleNavClick(event, this)">Get Started</button>
         </div>
     </section>
 
-    <!-- Research Directions Section -->
-    <!-- 研究方向没加链接，或者纯文本，不需要数据库 -->
     <section id="research_directions" class="research_directions">
         <h2>Research Directions</h2>
+        <div class="research-grid">
         {% for direction in directions %}
         <div class="research-content">
             <ul>
-                <!-- 这里可以将研究方向的细节按需求填充 -->
-                <li>– {{ direction.direction_name }}</li>
+                <li>{{ direction.direction_name }}</li>
             </ul>
         </div>
-    {% endfor %}
+        {% endfor %}
+        </div>
     </section>
     <div class="hr">
     </div>
-    <!-- Gallery Section -->
 
 <section id="gallery" class="gallery">
     <h2>Gallery of Scientific Research</h2>
@@ -85,9 +82,7 @@
     </div>
 </section>
 
-    <!-- hr -->
     <div class="hr"></div>
-    <!-- Result Section -->
     <section id="result" class="result">
         <div class="result-text">
             <h2>The result of our research</h2>
@@ -96,13 +91,10 @@
         {% for image in resultimages %}
         <div class="result-item">
             <img src="{{ image.image.url }}" alt="Image {{ forloop.counter }}">
-<!--            <h3>- {{ image.description|slice:":20" }}</h3>-->
         </div>
         {% endfor %}
     </div>
     </section>
-    <!-- Paper Section -->
-    <!-- 链接到数据库，论文可更新 -->
     <section id="paper" class="paper">
         <div class="paper-text">
             <h2>Our Papers</h2>
@@ -126,7 +118,6 @@
             <img src="{% static 'images/ip.png' %}" alt="校园图片" class="address-image">
         </div>
     </section>
-    <!-- Contact Section -->
     <section class="contact">
     <div class="contact-container">
         <div class="contact-item">
@@ -161,7 +152,6 @@
     </div>
 </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 FangQing. All Rights Reserved.</p>
     </footer>

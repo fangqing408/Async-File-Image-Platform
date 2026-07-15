@@ -1,36 +1,84 @@
-/* 设置结果展示 */
 .result {
-    padding: 10px; /* 整个类的 padding */
-    background-color: #f9f9f9; /* 背景色 */
-    text-align: center; /* 文本居中 */
+    padding: var(--spacing-12) var(--spacing-6) var(--spacing-8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
+    text-align: center;
+    position: relative;
 }
 
-.result-row {
-    display: block; /* block 布局 */
-}
-
-.result-row .result-item {
-    width: 50%; /* 每个 item 占一行 */
-    margin: 20px auto; /* 每个 box 上下间距，左右相同，放在中间 */
-}
-
-.result-row .result-item img {
-    width: 100%; /* 占掉 box 的所有 */
-    height: auto; /* 高度自适应 */
+.result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-400), var(--primary-200), var(--primary-400));
+    border-radius: var(--radius-full);
 }
 
 .result-text h2 {
-    font-size: 32px; /* h2 标签的字体大小 */
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--spacing-10);
+    font-weight: var(--font-bold);
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.result-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-8);
+}
+
+.result-row .result-item {
+    width: calc(50% - var(--spacing-8));
+    max-width: 500px;
+    background: white;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--neutral-100);
+    transition: all var(--transition-normal);
+}
+
+.result-row .result-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-200);
+}
+
+.result-row .result-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.result-row .result-item:hover img {
+    transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
-    /* 调整 result-item 的宽度和排列方式 */
-    .result-row .result-item {
-        width: 100%; /* 在手机端每个 item 占满一行 */
+    .result {
+        padding: var(--spacing-8) var(--spacing-4);
     }
 
-    /* 调整字体大小 */
     .result-text h2 {
-        font-size: 24px; /* 手机端标题字体大小 */
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .result-row .result-item {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: var(--spacing-4);
+    }
+
+    .result-row .result-item img {
+        max-height: 300px;
     }
 }

@@ -1,133 +1,187 @@
-/* members.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, "Segoe UI", "PingFang SC", sans-serif;
-}
-
-body {
-    background-color: #f0f0f0;
-    line-height: 1.6;
-    text-align: center;
-}
-
-.hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 3px;  /* 更粗的分割线 */
-    background: linear-gradient(to right, #add8e6, #bdd8ff);  /* 渐变色分割线 */
-    border: none;
-}
-
-/* 底部导航栏 */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #add8e6;
-    color: white;
-}
-
 #members {
-    padding: 100px 20px 30px 20px;  /* 更加适配不同设备 */
+    padding: var(--spacing-12) var(--spacing-6) var(--spacing-16);
+    background: linear-gradient(180deg, var(--neutral-50) 0%, white 100%);
     text-align: center;
-    background-color: white;
+    min-height: calc(100vh - 200px);
 }
 
 #members h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--spacing-12);
+    font-weight: var(--font-bold);
+    color: var(--neutral-800);
+    letter-spacing: -0.02em;
 }
 
-/* 导师样式 */
-.mentor {
+.section-divider {
+    margin: var(--spacing-10) auto;
     width: 100%;
+    max-width: 400px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-300), var(--primary-500), var(--primary-300), transparent);
+    border: none;
+}
+
+.section-title {
+    font-size: var(--text-lg);
+    color: var(--primary-600);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mentor-section {
+    margin-bottom: var(--spacing-16);
+}
+
+.mentor {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
 }
 
 .mentor .member {
-    width: 60%;  /* 导师的宽度占据更大的比例 */
+    width: 100%;
+    max-width: 380px;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-8);
+    border: 1px solid var(--neutral-200);
+    transition: all var(--transition-normal);
+}
+
+.mentor .member:hover {
+    border-color: var(--primary-300);
+    box-shadow: var(--shadow-md);
 }
 
 .mentor img {
-    width: 180px;  /* 增大导师头像 */
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-6);
+    border: 3px solid var(--neutral-100);
+    transition: all var(--transition-normal);
+}
+
+.mentor img:hover {
+    border-color: var(--primary-300);
 }
 
 .mentor h2 {
-    font-size: 2.5rem;  /* 导师名字更大 */
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: var(--spacing-2) 0;
+    color: var(--neutral-800);
 }
 
-.mentor p {
-    font-size: 1.4rem;
-    color: #555;
+.mentor .position {
+    font-size: var(--text-base);
+    color: var(--primary-600);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-4);
 }
 
-/* 学生样式 */
+.mentor .info-item {
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+    margin: var(--spacing-1) 0;
+    line-height: 1.6;
+}
+
+.team-section {
+    margin-top: var(--spacing-8);
+}
+
 .team {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;  /* 调整左侧和右侧间距 */
-    margin-bottom: 40px;
-}
-
-/* 每个成员的样式 */
-.member {
-    flex: 0 1 calc(33.333% - 20px);  /* 每行最多3个，减去 gap */
-    max-width: 400px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--spacing-6);
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+.member {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    border: 1px solid var(--neutral-100);
+    transition: all var(--transition-normal);
+    text-align: center;
+}
+
+.member:hover {
+    border-color: var(--primary-200);
+    box-shadow: var(--shadow-sm);
+}
+
 .member img {
-    width: 120px;  /* 增大头像 */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom: var(--spacing-4);
+    border: 2px solid var(--neutral-100);
+    transition: all var(--transition-normal);
+}
+
+.member:hover img {
+    border-color: var(--primary-300);
 }
 
 .member h2 {
-    font-size: 2rem;  /* 增大名字 */
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin: var(--spacing-2) 0;
+    color: var(--neutral-800);
 }
 
-.member p {
-    font-size: 1.4rem;
-    color: #555;
+.member .position {
+    font-size: var(--text-xs);
+    color: var(--primary-600);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--spacing-3);
+    letter-spacing: 1px;
 }
 
-/* 响应式布局：手机上每行一个 */
+.member .info-item {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    margin: var(--spacing-1) 0;
+    line-height: 1.5;
+}
+
 @media (max-width: 768px) {
     #members {
-        padding: 80px 20px 30px 20px;  /* 减少左右的 padding 让空间更大 */
+        padding: var(--spacing-8) var(--spacing-4) var(--spacing-12);
+    }
+
+    #members h1 {
+        font-size: var(--text-xl);
+        margin-bottom: var(--spacing-8);
     }
 
     .team {
-        flex-direction: column;  /* 在手机上每行显示一个学生 */
-        gap: 15px;  /* 减小学生之间的间隙 */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-4);
     }
 
     .member {
-        width: 90%;  /* 让成员的宽度稍微宽一点 */
+        padding: var(--spacing-4);
+    }
+
+    .mentor img {
+        width: 120px;
+        height: 120px;
     }
 
     .mentor h2 {
-        font-size: 2rem;  /* 导师名字较小 */
+        font-size: var(--text-xl);
     }
 
-    .mentor p {
-        font-size: 1.2rem;  /* 导师文本较小 */
+    .member img {
+        width: 100px;
+        height: 100px;
     }
 }

@@ -1,33 +1,80 @@
-/* 初始化默认的格式*/
 * {
-    margin: 0; /* 外边距 */
-    padding: 0; /* 内边距 */
-    box-sizing: border-box; /* 设置 box 的格式为整体大小包含内外边距 */
-    font-family: Roboto, "Segoe UI", "PingFang SC", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, "Segoe UI", "PingFang SC", system-ui, sans-serif;
 }
 
-/* 设置主体和背景图片 */
-body {
-    background-color: #f0f0f0; /* 背景颜色 */
-    line-height: 1.6; /* 设置行高 */
-    text-align: center;  /* 文本居中 */
+html {
+    scroll-behavior: smooth;
+}
 
-    background-image: url('{{conf.avatar.url}}'); /* 设置背景图 */
-    background-size: cover; /* 填满屏幕，可以剪切 */
-    background-repeat: no-repeat; /* 不重复填充 */
-    background-position: center center; /* 居中显示 */
-    background-attachment: fixed; /* 页面滚动时背景固定 */
+body {
+    background-color: var(--neutral-100);
+    line-height: 1.6;
+    color: var(--neutral-800);
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+    padding-top: 72px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: -1;
 }
 
 .hr {
-    margin-top: 5px; /* hr */
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-400), var(--primary-200), var(--primary-400));
+    border: none;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 4px rgba(56, 189, 248, 0.3);
 }
 
-/* 底部导航栏 */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
 footer {
-    text-align: center; /* 文本居中 */
-    padding: 20px; /* 内部间距 */
-    background-color: #add8e6; /* 背景色 */
-    color: white; /* 文本颜色 */
+    text-align: center;
+    padding: var(--spacing-8) var(--spacing-4);
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    color: white;
+    margin-top: var(--spacing-16);
+    position: relative;
+    overflow: hidden;
 }
 
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-300), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+footer p {
+    font-size: var(--text-sm);
+    opacity: 0.9;
+    font-weight: var(--font-medium);
+}

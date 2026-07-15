@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding...</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tree-hole.css' %}">
+</head>
+<body class="no-nav">
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}" data-target="hero">Home</a></li>
+                <li><a href="{% url 'home' %}#research_directions" data-target="research_directions">Research</a></li>
+                <li><a href="{% url 'home' %}#gallery" data-target="gallery">Gallery</a></li>
+                <li><a href="{% url 'home' %}#result" data-target="result">Result</a></li>
+                <li><a href="{% url 'home' %}#paper" data-target="paper">Paper</a></li>
+                <li><a href="{% url 'home' %}#contact" data-target="contact">Contact</a></li>
+                <li><a href="{% url 'members' %}">Members</a></li>
+            </ul>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="tree-hole" class="tree-hole">
+        <div class="tree-hole-container">
+            <h1 class="tree-hole-title">Coding...</h1>
+            <p class="tree-hole-subtitle">提交 Bug 代码，提交一次即可，无需重复提交。</p>
+
+            <!-- 留言输入区 -->
+            <div class="tree-hole-input-area">
+                <textarea
+                    id="tree-hole-input"
+                    class="tree-hole-input"
+                    placeholder="在此输入代码内容，支持 Ctrl+V 粘贴代码图片..."
+                    maxlength="500"
+                    rows="5"
+                ></textarea>
+
+                <!-- 辅助提示 -->
+                <div class="tree-hole-hint">
+                    支持粘贴图片，格式: JPG、PNG、GIF，单张不超过 10MB
+                </div>
+
+                <!-- 图片预览区 -->
+                <div id="image-preview-area" class="image-preview-area" style="display: none;">
+                    <div id="image-preview-list" class="image-preview-list"></div>
+                </div>
+
+                <!-- 移动端上传按钮 -->
+                <div class="tree-hole-mobile-upload">
+                    <input type="file" id="mobile-file-input" accept="image/jpeg,image/png,image/gif,image/bmp,image/webp" multiple style="display: none;">
+                    <button type="button" class="mobile-upload-btn" onclick="document.getElementById('mobile-file-input').click()">
+                        选择图片
+                    </button>
+                </div>
+
+                <!-- 底部操作区 -->
+                <div class="tree-hole-actions">
+                    <span id="char-counter" class="char-counter">0/500</span>
+                    <button
+                        id="submit-btn"
+                        class="submit-btn"
+                        disabled
+                        onclick="submitTreeHole()"
+                    >
+                        发送
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast 提示 -->
+        <div id="toast" class="toast" style="display: none;"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FangQing. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/tree-hole.js' %}"></script>
+</body>
+</html>

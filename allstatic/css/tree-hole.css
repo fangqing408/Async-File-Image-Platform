@@ -1,0 +1,473 @@
+/* 树洞留言模块样式 - 基于 docs/design-system.md Design Tokens */
+
+body.no-nav header {
+    display: none;
+}
+
+body.no-nav {
+    padding-top: 0;
+}
+
+.tree-hole {
+    padding: var(--spacing-12) var(--spacing-6) var(--spacing-16);
+    background: linear-gradient(180deg, var(--neutral-50) 0%, white 100%);
+    min-height: calc(100vh - 200px);
+}
+
+.tree-hole-container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.tree-hole-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-800);
+    text-align: center;
+    margin-bottom: var(--spacing-2);
+}
+
+.tree-hole-subtitle {
+    font-size: var(--text-base);
+    color: var(--neutral-400);
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+}
+
+/* 输入区 */
+.tree-hole-input-area {
+    background: white;
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
+    transition: border-color var(--transition-normal);
+}
+
+.tree-hole-input-area:focus-within {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.tree-hole-input-area.error {
+    border-color: var(--error);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.tree-hole-input-area.drag-over {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.tree-hole-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--neutral-100);
+    margin-bottom: var(--spacing-4);
+}
+
+.tree-hole-name {
+    flex: 1;
+    padding: var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    color: var(--neutral-800);
+    font-family: inherit;
+    background: var(--neutral-50);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.tree-hole-name:focus {
+    border-color: var(--primary-400);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    background: white;
+}
+
+.tree-hole-name::placeholder {
+    color: var(--neutral-400);
+}
+
+.tree-hole-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: vertical;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--neutral-800);
+    font-family: inherit;
+    background: transparent;
+    min-height: 120px;
+}
+
+.tree-hole-input::placeholder {
+    color: var(--neutral-300);
+}
+
+/* 辅助提示 */
+.tree-hole-hint {
+    font-size: var(--text-xs);
+    color: var(--neutral-400);
+    margin-top: var(--spacing-3);
+    margin-bottom: var(--spacing-2);
+}
+
+/* 图片预览区 */
+.image-preview-area {
+    margin-top: var(--spacing-4);
+    animation: slideIn var(--transition-normal);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-preview-list {
+    display: flex;
+    gap: var(--spacing-4);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-2);
+}
+
+.image-preview-list::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-preview-list::-webkit-scrollbar-track {
+    background: var(--neutral-100);
+    border-radius: var(--radius-full);
+}
+
+.image-preview-list::-webkit-scrollbar-thumb {
+    background: var(--neutral-300);
+    border-radius: var(--radius-full);
+}
+
+/* 单个预览图容器 */
+.preview-item {
+    position: relative;
+    flex-shrink: 0;
+    width: 200px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--neutral-200);
+    background: var(--neutral-50);
+    transition: all var(--transition-fast);
+}
+
+.preview-item:hover {
+    border-color: var(--primary-300);
+    box-shadow: var(--shadow-md);
+}
+
+/* 预览图图片 */
+.preview-item img {
+    display: block;
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+/* 上传中遮罩 */
+.preview-item .upload-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-item .upload-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 上传进度文字 */
+.preview-item .upload-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: var(--text-xs);
+    text-align: center;
+    padding: 2px 0;
+}
+
+/* 成功标记 */
+.preview-item .success-mark {
+    position: absolute;
+    bottom: var(--spacing-2);
+    right: var(--spacing-2);
+    width: 20px;
+    height: 20px;
+    background: var(--success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 失败标记 */
+.preview-item .error-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(239, 68, 68, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.preview-item .error-mark .error-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--error);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.preview-item .error-mark .error-text {
+    color: white;
+    font-size: var(--text-xs);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 删除按钮 */
+.preview-item .delete-btn {
+    position: absolute;
+    top: var(--spacing-1);
+    right: var(--spacing-1);
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity var(--transition-fast), background var(--transition-fast);
+}
+
+.preview-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.preview-item .delete-btn:hover {
+    background: var(--error);
+}
+
+/* 重试按钮 */
+.preview-item .retry-btn {
+    margin-top: var(--spacing-1);
+    width: 100%;
+    padding: var(--spacing-1) var(--spacing-2);
+    background: var(--neutral-100);
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    color: var(--neutral-600);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.preview-item .retry-btn:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-300);
+    color: var(--primary-600);
+}
+
+/* 图片信息 */
+.preview-item .image-info {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--text-xs);
+    color: var(--neutral-400);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 移动端上传按钮 */
+.tree-hole-mobile-upload {
+    margin-top: var(--spacing-3);
+}
+
+.mobile-upload-btn {
+    display: none;
+    padding: var(--spacing-2) var(--spacing-4);
+    background: var(--neutral-100);
+    border: 1px dashed var(--neutral-300);
+    border-radius: var(--radius-md);
+    color: var(--neutral-500);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mobile-upload-btn:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-300);
+    color: var(--primary-600);
+}
+
+/* 底部操作区 */
+.tree-hole-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-4);
+}
+
+.char-counter {
+    font-size: var(--text-sm);
+    color: var(--neutral-400);
+}
+
+.char-counter.exceed {
+    color: var(--error);
+    font-weight: var(--font-medium);
+}
+
+/* 发送按钮 */
+.submit-btn {
+    padding: var(--spacing-2) var(--spacing-6);
+    background: var(--primary-400);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: var(--primary-500);
+    transform: scale(0.98);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.submit-btn:disabled {
+    background: var(--neutral-200);
+    color: var(--neutral-400);
+    cursor: not-allowed;
+}
+
+.submit-btn.loading {
+    background: var(--neutral-300);
+    color: var(--neutral-500);
+    cursor: wait;
+    position: relative;
+}
+
+/* Toast 提示 */
+.toast {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    color: white;
+    z-index: 3000;
+    animation: toastIn var(--transition-fast);
+    box-shadow: var(--shadow-lg);
+}
+
+.toast.success {
+    background: var(--success);
+}
+
+.toast.error {
+    background: var(--error);
+}
+
+.toast.warning {
+    background: var(--warning);
+}
+
+.toast.info {
+    background: var(--info);
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .tree-hole {
+        padding: var(--spacing-8) var(--spacing-4) var(--spacing-12);
+    }
+
+    .tree-hole-title {
+        font-size: var(--text-2xl);
+    }
+
+    .tree-hole-input-area {
+        padding: var(--spacing-4);
+    }
+
+    .preview-item {
+        width: 150px;
+    }
+
+    .preview-item img {
+        max-height: 120px;
+    }
+
+    .mobile-upload-btn {
+        display: inline-block;
+    }
+}

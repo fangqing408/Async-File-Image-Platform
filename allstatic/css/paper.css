@@ -1,0 +1,101 @@
+.paper {
+    padding: var(--spacing-12) var(--spacing-6);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-400), var(--primary-200), var(--primary-400));
+    border-radius: var(--radius-full);
+}
+
+.paper-text h2 {
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--spacing-10);
+    font-weight: var(--font-bold);
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.paper-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.paper-item {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-5) var(--spacing-6);
+    font-size: var(--text-base);
+    color: var(--neutral-700);
+    text-decoration: none;
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--neutral-200);
+    transition: all var(--transition-normal);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.paper-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--primary-500), var(--primary-300));
+    border-radius: var(--radius-full);
+    transition: width var(--transition-normal);
+}
+
+.paper-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-300);
+}
+
+.paper-item:hover::before {
+    width: 6px;
+}
+
+.paper-item:active {
+    transform: translateX(4px);
+}
+
+.paper-item span {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--neutral-400);
+    margin-top: var(--spacing-2);
+}
+
+@media (max-width: 768px) {
+    .paper {
+        padding: var(--spacing-8) var(--spacing-4);
+    }
+
+    .paper-text h2 {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-6);
+    }
+
+    .paper-item {
+        padding: var(--spacing-4) var(--spacing-5);
+        font-size: var(--text-sm);
+    }
+}
